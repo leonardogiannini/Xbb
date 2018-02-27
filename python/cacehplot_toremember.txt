@@ -1,0 +1,522 @@
+[legianni@lxplus059 python]$ ./submit.py -T LxplusZll -F cacheplot-v1 -J cacheplot                   
+whereToLaunch lxplus-condor
+run_locally False
+Start getting infos on all the samples (ParseInfo)
+==================================================
+
+samples_config is /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/LxplusZllconfig/samples_nosplit.ini
+ls: cannot access root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2/: No such file or directory
+@DEBUG: []
+Finished getting infos on all the samples (ParseInfo)
+=====================================================
+
+### CHECKSPLITTEDSAMPLENAME ### Z1Jets_Zm10to50_udscg
+sample identifiers: ( 46 )
+ > DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+ > DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+ > DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+ > DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+ > DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+ > DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+ > DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+ > DoubleEG__Run2016B-03Feb2017_ver1-v1
+ > DoubleEG__Run2016B-03Feb2017_ver2-v2
+ > DoubleEG__Run2016C-03Feb2017-v1
+ > DoubleEG__Run2016D-03Feb2017-v1
+ > DoubleEG__Run2016E-03Feb2017-v1
+ > DoubleEG__Run2016F-03Feb2017-v1
+ > DoubleEG__Run2016G-03Feb2017-v1
+ > DoubleEG__Run2016H-03Feb2017_ver2-v1
+ > DoubleEG__Run2016H-03Feb2017_ver3-v1
+ > DoubleMuon__Run2016B-03Feb2017_ver1-v1
+ > DoubleMuon__Run2016B-03Feb2017_ver2-v2
+ > DoubleMuon__Run2016C-03Feb2017-v1
+ > DoubleMuon__Run2016D-03Feb2017-v1
+ > DoubleMuon__Run2016E-03Feb2017-v1
+ > DoubleMuon__Run2016F-03Feb2017-v1
+ > DoubleMuon__Run2016G-03Feb2017-v1
+ > DoubleMuon__Run2016H-03Feb2017_ver2-v1
+ > DoubleMuon__Run2016H-03Feb2017_ver3-v1
+ > ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4
+ > ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1
+ > TT_TuneCUETP8M2T4_13TeV-powheg-pythia8
+ > WZ_TuneCUETP8M1_13TeV-pythia8
+ > ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8
+ > ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1
+ > ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8
+ > ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1
+ > ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  32  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  32  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                                 
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_50d9787d214cf72.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83733.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  16  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  16  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                                 
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_6b37e878bb479c03.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83734.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  5  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  5  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                                 
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-4bbc106d3a9481f8.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83735.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  2  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  2  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                                         
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-5f46278a72abd121.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83737.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  4  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  4  files.
+DEBUG: split after  15  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=15  --sampleIdentifier=DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_60fba2796ed73bc8.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83738.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  4  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  4  files.
+DEBUG: split after  15  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=15  --sampleIdentifier=DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1                                                      
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_58c463d0b0be7ab8.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83739.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  2  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  2  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-489fb004c1282d9.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83740.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  1  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1                                                      
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-4e715abbeae72067.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83741.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                   
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_249df6487c0f0afa.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83742.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  6  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  6  files.
+DEBUG: split after  15  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=15  --sampleIdentifier=DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1                                                          
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-25f079456c57c77e.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83743.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                               
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_1e33d41252a01753.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83744.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                   
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_216edd7a6e951d7f.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83745.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1                                                         
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_19814fa13bfee96b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83746.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                 
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-2b8fcf369cb82256.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83747.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  1  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                    
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_1226273eef8f36b2.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83748.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1                                                         
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-2744850c547c7df9.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83749.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  4  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  4  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                    
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-60085086eb033e5e.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83750.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  2  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/*.root
+INFO: found  2  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                  
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-2da00669c80caeba.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83751.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  39  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1/*.root
+INFO: found  39  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1                                                                                 
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_23ab22243034f0ce.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83752.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016B-03Feb2017_ver1-v1/*.root
+INFO: found  5  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016B-03Feb2017_ver1-v1/*.root
+INFO: found  5  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016B-03Feb2017_ver1-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016B-03Feb2017_ver1-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                              
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_1e46d651c7544aec.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83753.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016B-03Feb2017_ver2-v2/*.root
+INFO: found  118  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016B-03Feb2017_ver2-v2/*.root
+INFO: found  118  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016B-03Feb2017_ver2-v2_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016B-03Feb2017_ver2-v2  --splitFilesChunks=1  --chunkNumber=1                                                                                                                              
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-30ad9ccef3a3f502.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83754.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016C-03Feb2017-v1/*.root
+INFO: found  39  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016C-03Feb2017-v1/*.root
+INFO: found  39  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016C-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016C-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                        
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-3e053624a1a2f423.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83755.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016D-03Feb2017-v1/*.root
+INFO: found  44  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016D-03Feb2017-v1/*.root
+INFO: found  44  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016D-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016D-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                        
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_6556d239063862e6.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83756.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016E-03Feb2017-v1/*.root
+INFO: found  41  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016E-03Feb2017-v1/*.root
+INFO: found  41  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016E-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016E-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                        
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_3793eb679307750b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83757.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016F-03Feb2017-v1/*.root
+INFO: found  29  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016F-03Feb2017-v1/*.root
+INFO: found  29  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016F-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016F-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                        
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-bad277c8c7458a4.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83758.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016G-03Feb2017-v1/*.root
+INFO: found  65  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016G-03Feb2017-v1/*.root
+INFO: found  65  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016G-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016G-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                        
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-4c87e3de0444ee07.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83759.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016H-03Feb2017_ver2-v1/*.root
+INFO: found  66  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016H-03Feb2017_ver2-v1/*.root
+INFO: found  66  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016H-03Feb2017_ver2-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016H-03Feb2017_ver2-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                              
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_50efdc2f6f1bfa33.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83760.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016H-03Feb2017_ver3-v1/*.root
+INFO: found  2  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleEG__Run2016H-03Feb2017_ver3-v1/*.root
+INFO: found  2  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleEG__Run2016H-03Feb2017_ver3-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleEG__Run2016H-03Feb2017_ver3-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                              
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_2b6563472fa63fb4.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83761.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016B-03Feb2017_ver1-v1/*.root
+INFO: found  4  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016B-03Feb2017_ver1-v1/*.root
+INFO: found  4  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016B-03Feb2017_ver1-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016B-03Feb2017_ver1-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                          
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-66c5d885dceeeed.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83762.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016B-03Feb2017_ver2-v2/*.root
+INFO: found  68  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016B-03Feb2017_ver2-v2/*.root
+INFO: found  68  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016B-03Feb2017_ver2-v2_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016B-03Feb2017_ver2-v2  --splitFilesChunks=1  --chunkNumber=1                                                                                                                          
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-55a717178666920b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83763.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016C-03Feb2017-v1/*.root
+INFO: found  23  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016C-03Feb2017-v1/*.root
+INFO: found  23  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016C-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016C-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                    
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-45c61faf641e987a.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83764.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016D-03Feb2017-v1/*.root
+INFO: found  28  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016D-03Feb2017-v1/*.root
+INFO: found  28  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016D-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016D-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                    
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_47aade5390b02a9.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83765.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016E-03Feb2017-v1/*.root
+INFO: found  23  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016E-03Feb2017-v1/*.root
+INFO: found  23  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016E-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016E-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                    
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-2f48e02c9976cf4.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83766.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016F-03Feb2017-v1/*.root
+INFO: found  17  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016F-03Feb2017-v1/*.root
+INFO: found  17  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016F-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016F-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                    
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-2de7490d23ccc769.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83767.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016G-03Feb2017-v1/*.root
+INFO: found  37  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016G-03Feb2017-v1/*.root
+INFO: found  37  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016G-03Feb2017-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016G-03Feb2017-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                    
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_432d4d1b633fbf22.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83768.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016H-03Feb2017_ver2-v1/*.root
+INFO: found  39  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016H-03Feb2017_ver2-v1/*.root
+INFO: found  39  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016H-03Feb2017_ver2-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016H-03Feb2017_ver2-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                          
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_7df21f1bd241f498.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83769.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016H-03Feb2017_ver3-v1/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//DoubleMuon__Run2016H-03Feb2017_ver3-v1/*.root
+INFO: found  1  files.
+DEBUG: split after  3500  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_DoubleMuon__Run2016H-03Feb2017_ver3-v1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=3500  --sampleIdentifier=DoubleMuon__Run2016H-03Feb2017_ver3-v1  --splitFilesChunks=1  --chunkNumber=1                                                                                                                          
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_6259f221a8c8284b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83770.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4  --splitFilesChunks=1  --chunkNumber=1                                                               
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-3b8ee2c15562822a.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83771.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1/*.root
+INFO: found  3  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1/*.root
+INFO: found  3  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1  --splitFilesChunks=1  --chunkNumber=1                                                                 
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-238337444f7747cd.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83772.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/*.root
+INFO: found  33  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/*.root
+INFO: found  33  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_TT_TuneCUETP8M2T4_13TeV-powheg-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=TT_TuneCUETP8M2T4_13TeV-powheg-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                                                                           
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-26584d31dea1320f.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83773.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//WZ_TuneCUETP8M1_13TeV-pythia8/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//WZ_TuneCUETP8M1_13TeV-pythia8/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_WZ_TuneCUETP8M1_13TeV-pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=WZ_TuneCUETP8M1_13TeV-pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                                                                                             
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_3ec31338317cb8e1.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83774.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/*.root
+INFO: found  2  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/*.root
+INFO: found  2  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8  --splitFilesChunks=1  --chunkNumber=1                                                                                                                        
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_5af9b0dd8a7e41d.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83775.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1/*.root
+INFO: found  2  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1/*.root
+INFO: found  2  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1  
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-1612001abb7ee7c9.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83776.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8/*.root
+INFO: found  6  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8/*.root
+INFO: found  6  files.
+DEBUG: split after  25  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=25  --sampleIdentifier=ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8  --splitFilesChunks=1  --chunkNumber=1  
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-538c97c25742ea.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83777.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1/*.root
+INFO: found  1  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1/*.root
+INFO: found  1  files.
+DEBUG: split after  100  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=100  --sampleIdentifier=ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1  --splitFilesChunks=1  --chunkNumber=1  
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-623c26df3abf5504.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83778.
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2/*.root
+INFO: found  2  files.
+INFO: reading part  1  of  1
+INFO: use  /eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype_sys_v2//ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2/*.root
+INFO: found  2  files.
+DEBUG: split after  10  files => number of parts =  1
+COMMAND: runAll.sh plot_cache_ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2_part1 LxplusZll cacheplot 1 noid  --regions=Zee_CRZlight,Zee_CRZb_incl,Zee_CRttbar,Zee_CRZlight_lowpt,Zee_CRZb_incl_lowpt,Zee_CRttbar_lowpt,Zee_CRZlight_highpt,Zee_CRZb_incl_highpt,Zee_CRttbar_highpt,Zuu_CRZlight,Zuu_CRZb_incl,Zuu_CRttbar,Zuu_CRZlight_lowpt,Zuu_CRZb_incl_lowpt,Zuu_CRttbar_lowpt,Zuu_CRZlight_highpt,Zuu_CRZb_incl_highpt,Zuu_CRttbar_highpt  --splitFilesChunkSize=10  --sampleIdentifier=ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2  --splitFilesChunks=1  --chunkNumber=1  
+the command is  condor_submit condor_cacheplot_2017_11_25-19_12_58_-6d0db1c213fa6ece.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83779.
+[legianni@lxplus059 python]$ 
+

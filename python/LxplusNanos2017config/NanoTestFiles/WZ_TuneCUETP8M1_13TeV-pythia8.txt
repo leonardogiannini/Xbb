@@ -1,0 +1,4 @@
+/store/user/legianni/NanoPost_vhbb/WZ_TuneCUETP8M1_13TeV-pythia8/NanoTestExample/180117_172206/0000/tree_1.root
+/store/user/legianni/NanoPost_vhbb/WZ_TuneCUETP8M1_13TeV-pythia8/NanoTestExample/180117_172206/0000/tree_2.root
+/store/user/legianni/NanoPost_vhbb/WZ_TuneCUETP8M1_13TeV-pythia8/NanoTestExample/180117_172206/0000/tree_3.root
+/store/user/legianni/NanoPost_vhbb/WZ_TuneCUETP8M1_13TeV-pythia8/NanoTestExample/180117_172206/0000/tree_4.root

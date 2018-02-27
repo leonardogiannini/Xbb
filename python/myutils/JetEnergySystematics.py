@@ -8,10 +8,13 @@ import math
 # jet regression and systematics
 class JetEnergySystematics(object):
 
-    def __init__(self, tree, sample, config, channel=''):
-        self.sample = sample
+    def __init__(self, channel='', weights=None):
         self.channel = channel
-        self.config = config
+        self.regWeightFileName = weights
+
+    def customInit(self, initVars):
+        self.config = initVars['config']
+        self.sample = initVars['sample']
         self.lastEntry = -1
         self.branchBuffers = {}
         self.branches = []
@@ -20,7 +23,7 @@ class JetEnergySystematics(object):
         self.isVerbose = False
 
         #regWeight = './reg/ttbar-G25-500k-13d-300t.weights.xml'
-        regWeight = './csv/gravall-v25.weights.xml'
+        regWeight = self.regWeightFileName if self.regWeightFileName else './csv/gravall-v25.weights.xml'
         #regWeight = './reg/TMVARegression_BDTG.weights.xml'
         self.regVars = ["Jet_pt",
                    "nPVs",
@@ -168,7 +171,6 @@ class JetEnergySystematics(object):
         self.addVarsToReader(self.TMVA_reader['readerJet'], self.theVars)
         self.TMVA_reader['readerJet'].BookMVA("readerJet", regWeight)
         print '\n\t ----> Evaluating Regression on sample....'
-        #print tree
 
     def addVarsToReader(self, reader,theVars):
         for key in self.regVars:

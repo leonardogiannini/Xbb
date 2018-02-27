@@ -5,10 +5,12 @@ import ROOT
 #  defined as 'specialweight' in samples_nosplit.ini
 class DYspecialWeight(object):
 
-    def __init__(self, sample, tree):
+    def __init__(self):
         self.branches = [{'name': 'DY_specialWeight', 'formula': self.getDYspecialWeight}]
-        self.sample = sample
-        self.specialWeightFormula =  ROOT.TTreeFormula('specialWeight', self.sample.specialweight, tree)
+
+    def customInit(self, initVars):
+        self.sample = initVars['sample']
+        self.specialWeightFormula =  ROOT.TTreeFormula('specialWeight', self.sample.specialweight, initVars['tree'])
 
     def getBranches(self):
         return self.branches

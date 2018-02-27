@@ -7,17 +7,19 @@ import math
 
 class WPtReweight(object):
 
-    def __init__(self, tree, sample, channel=''):
-        self.sample = sample
-        self.channel = channel
+    def __init__(self):
         self.lastEntry = -1
         self.branchBuffers = {}
         self.branches = []
-
         branchName = 'FitCorr' 
         self.branchBuffers[branchName] = array.array('f', [1.0, 0.0, 0.0])
         self.branches.append({'name': branchName, 'formula': self.getVectorBranch, 'arguments': {'branch': branchName, 'length':3}, 'length': 3})
-        self.formWHF = ROOT.TTreeFormula('WHF','Sum$(GenJet_pt>20 && abs(GenJet_eta)<2.4 && GenJet_numBHadrons>=2)', tree)
+
+    def customInit(self, initVars):
+        self.sample = initVars['sample']
+        self.channel = initVars['channel']
+        self.tree = initVars['tree']
+        self.formWHF = ROOT.TTreeFormula('WHF','Sum$(GenJet_pt>20 && abs(GenJet_eta)<2.4 && GenJet_numBHadrons>=2)', self.tree)
 
     def getBranches(self):
         return self.branches

@@ -115,7 +115,7 @@ class Datacard(object):
         # define the options read directly from the config
         sysOptionNames = ['sys_cut_suffix', 'sys_weight_corr', 'decorrelate_sys_weight', 'sys_cut_include', 'sys_factor', 'sys_affecting', 'sys_lhe_affecting', 'rescaleSqrtN', 'toy', 'blind', 
                 'addBlindingCut', 'change_shapes', 'Group', 'Dict', 'binstat', 'binstat_cr', 'rebin_active', 'ignore_stats', 'signal_inject', 'add_signal_as_bkg', 'systematicsnaming', 'weightF_sys',
-                'sample_sys_info', 'addSample_sys', 'removeWeightSystematics', 'ptRegionsDict', 'setup', 'setupSignals', 'reshapeBins' 
+                'sample_sys_info', 'addSample_sys', 'removeWeightSystematics', 'ptRegionsDict', 'setup', 'setupSignals', 'reshapeBins'
                 ]
         for sysOptionName in sysOptionNames:
             self.sysOptions[sysOptionName] = eval(config.get('LimitGeneral', sysOptionName)) if config.has_option('LimitGeneral', sysOptionName) else None
@@ -182,13 +182,13 @@ class Datacard(object):
         #systematics up/down
         self.UD = ['Up', 'Down']
 
-        if self.verbose:
+        if self.debug:
             print ('Parse the sample information')
             print ('============================\n')
         #Parse samples configuration
         self.samplesInfo = ParseInfo(self.samplesInfoDirectory, self.path)
 
-        if self.verbose:
+        if self.debug:
             print ('Get the sample list')
             print ('===================\n')
         self.backgrounds = eval(config.get('dc:%s'%self.region, 'background'))
@@ -210,7 +210,7 @@ class Datacard(object):
                         NOMsamplesys = sample_type[0]
                         noNom = False
                         for nomsample in NOMsamplesys: #This is for mergesyscachingdcsplit. Doesn't add the sys if nom is not present
-                            if self.verbose:
+                            if self.debug:
                                 print ('nomsample is', nomsample)
                                 print ('signals+backgrounds are', self.signals+self.backgrounds)
                             if nomsample not in self.signals+self.backgrounds: noNom = True
@@ -225,7 +225,7 @@ class Datacard(object):
         self.sample_sys_dic = {}
         for sample_sys in self.sample_sys_list:
             self.sample_sys_dic[sample_sys] = False
-        if self.verbose:
+        if self.debug:
             print("\x1b[34msample_sys_list\x1b[0m =", self.sample_sys_list)
 
         self.samples = {
@@ -264,7 +264,7 @@ class Datacard(object):
         # contains all systematicDictionaries, first entry will be nominal
         self.systematicsList = [self.systematicsDictionaryNominal]
 
-        if self.verbose:
+        if self.verbose or self.debug:
             print ('Assign the systematics')
             print ('======================\n')
 
@@ -324,6 +324,9 @@ class Datacard(object):
                                 systematicsDictionary['sample_sys_dic'][sampleName] = value
 
                 self.systematicsList.append(systematicsDictionary)
+        if self.debug or self.verbose:
+            print('INFO: datacard initialization complete!')
+            print('INFO: {nSys} systematics for {nSamples} samples'.format(nSys=len(self.systematicsList), nSamples=sum([len(x) for k,x in self.samples.iteritems()])))
         
 
     def calcBinning(self):
@@ -652,7 +655,7 @@ class Datacard(object):
                             treeVar = sampleTree.evaluate(systematics['var'])
                             specialweight = sampleTree.evaluate('specialweight') if useSpecialweight else 1.0
                             self.histograms[sample.name][systematics['systematicsName']].Fill(treeVar, weight * specialweight)
-                            
+
             # rescale histograms to match cross section and to compensate for cut on MC to not use MVA training samples
             for systematics in systematicsList:
                 mcRescale = systematics['mcRescale'] if 'mcRescale' in systematics else 1.0

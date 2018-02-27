@@ -8,10 +8,8 @@ from LeptonSF import LeptonSF
 
 class LeptonWeights(object):
 
-    def __init__(self, tree, sample, config, channel=''):
-        self.sample = sample
+    def __init__(self, channel=''):
         self.channel = channel
-        self.config = config
         self.lastEntry = -1
         self.branchBuffers = {}
         self.branches = []
@@ -28,6 +26,9 @@ class LeptonWeights(object):
                 self.branchBuffers[branchName] = array.array('f', [1.0, 0.0, 0.0])
                 self.branches.append({'name': branchName, 'formula': self.getVectorBranch, 'arguments': {'branch': branchName, 'length':3}, 'length': 3})
         self.leptonSF = {}
+
+    def customInit(self, initVars):
+        self.config = initVars['config']
 
     def getBranches(self):
         return self.branches

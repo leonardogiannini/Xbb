@@ -1,0 +1,431 @@
+bbHToBB_M-125_4FS_yb2_13TeV_amcatnlo
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/bbHToBB_M-125_4FS_yb2_13TeV_amcatnlo.txt
+bbHToBB_M-125_4FS_ybyt_13TeV_amcatnlo
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/bbHToBB_M-125_4FS_ybyt_13TeV_amcatnlo.txt
+DoubleEG__Run2016B-03Feb2017_ver1-v1
+-rw-r--r--. 1 legianni zh 2.6K Jan 18 16:42 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016B-03Feb2017_ver1-v1.txt
+[DoubleEG__Run2016B-03Feb2017_ver1-v1]
+DoubleEG__Run2016B-03Feb2017_ver2-v2
+-rw-r--r--. 1 legianni zh 52K Jan 18 16:44 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016B-03Feb2017_ver2-v2.txt
+[DoubleEG__Run2016B-03Feb2017_ver2-v2]
+DoubleEG__Run2016B-23Sep2016-v2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016B-23Sep2016-v2.txt
+DoubleEG__Run2016B-23Sep2016-v3
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016B-23Sep2016-v3.txt
+DoubleEG__Run2016C-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 22K Jan 18 16:42 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016C-03Feb2017-v1.txt
+[DoubleEG__Run2016C-03Feb2017-v1]
+DoubleEG__Run2016C-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016C-23Sep2016-v1.txt
+DoubleEG__Run2016D-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 25K Jan 18 16:46 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016D-03Feb2017-v1.txt
+[DoubleEG__Run2016D-03Feb2017-v1]
+DoubleEG__Run2016D-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016D-23Sep2016-v1.txt
+DoubleEG__Run2016E-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 21K Jan 18 16:45 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016E-03Feb2017-v1.txt
+[DoubleEG__Run2016E-03Feb2017-v1]
+DoubleEG__Run2016E-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016E-23Sep2016-v1.txt
+DoubleEG__Run2016F-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 15K Jan 18 16:48 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016F-03Feb2017-v1.txt
+[DoubleEG__Run2016F-03Feb2017-v1]
+DoubleEG__Run2016F-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016F-23Sep2016-v1.txt
+DoubleEG__Run2016G-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 36K Jan 18 16:47 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016G-03Feb2017-v1.txt
+[DoubleEG__Run2016G-03Feb2017-v1]
+DoubleEG__Run2016G-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016G-23Sep2016-v1.txt
+DoubleEG__Run2016H-03Feb2017_ver2-v1
+-rw-r--r--. 1 legianni zh 911 Jan 18 16:48 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016H-03Feb2017_ver2-v1.txt
+[DoubleEG__Run2016H-03Feb2017_ver2-v1]
+DoubleEG__Run2016H-03Feb2017_ver3-v1
+-rw-r--r--. 1 legianni zh 32K Jan 18 16:49 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016H-03Feb2017_ver3-v1.txt
+[DoubleEG__Run2016H-03Feb2017_ver3-v1]
+DoubleEG__Run2016H-PromptReco-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016H-PromptReco-v1.txt
+DoubleEG__Run2016H-PromptReco-v2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016H-PromptReco-v2.txt
+DoubleEG__Run2016H-PromptReco-v3
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleEG__Run2016H-PromptReco-v3.txt
+DoubleMuon__Run2016B-03Feb2017_ver1-v1
+-rw-r--r--. 1 legianni zh 37K Jan 18 16:34 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016B-03Feb2017_ver1-v1.txt
+[DoubleMuon__Run2016B-03Feb2017_ver1-v1]
+DoubleMuon__Run2016B-03Feb2017_ver2-v2
+-rw-r--r--. 1 legianni zh 2.1K Jan 18 16:35 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016B-03Feb2017_ver2-v2.txt
+[DoubleMuon__Run2016B-03Feb2017_ver2-v2]
+DoubleMuon__Run2016B-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016B-23Sep2016-v1.txt
+DoubleMuon__Run2016B-23Sep2016-v3
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016B-23Sep2016-v3.txt
+DoubleMuon__Run2016C-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 13K Jan 18 16:31 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016C-03Feb2017-v1.txt
+[DoubleMuon__Run2016C-03Feb2017-v1]
+DoubleMuon__Run2016C-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016C-23Sep2016-v1.txt
+DoubleMuon__Run2016D-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 16K Jan 18 16:36 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016D-03Feb2017-v1.txt
+[DoubleMuon__Run2016D-03Feb2017-v1]
+DoubleMuon__Run2016D-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016D-23Sep2016-v1.txt
+DoubleMuon__Run2016E-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 13K Jan 18 16:37 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016E-03Feb2017-v1.txt
+[DoubleMuon__Run2016E-03Feb2017-v1]
+DoubleMuon__Run2016E-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016E-23Sep2016-v1.txt
+DoubleMuon__Run2016F-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 8.2K Jan 18 16:32 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016F-03Feb2017-v1.txt
+[DoubleMuon__Run2016F-03Feb2017-v1]
+DoubleMuon__Run2016F-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016F-23Sep2016-v1.txt
+DoubleMuon__Run2016G-03Feb2017-v1
+-rw-r--r--. 1 legianni zh 21K Jan 18 16:39 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016G-03Feb2017-v1.txt
+[DoubleMuon__Run2016G-03Feb2017-v1]
+DoubleMuon__Run2016G-23Sep2016-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016G-23Sep2016-v1.txt
+DoubleMuon__Run2016H-03Feb2017_ver2-v1
+-rw-r--r--. 1 legianni zh 20K Jan 18 16:38 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016H-03Feb2017_ver2-v1.txt
+[DoubleMuon__Run2016H-03Feb2017_ver2-v1]
+DoubleMuon__Run2016H-03Feb2017_ver3-v1
+-rw-r--r--. 1 legianni zh 651 Jan 18 16:40 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016H-03Feb2017_ver3-v1.txt
+[DoubleMuon__Run2016H-03Feb2017_ver3-v1]
+DoubleMuon__Run2016H-PromptReco-v1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016H-PromptReco-v1.txt
+DoubleMuon__Run2016H-PromptReco-v2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016H-PromptReco-v2.txt
+DoubleMuon__Run2016H-PromptReco-v3
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DoubleMuon__Run2016H-PromptReco-v3.txt
+DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 23K Jan 18 16:21 LxplusNanosZllconfig/NanoTestFiles/DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DY1JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 35K Jan 18 16:20 LxplusNanosZllconfig/NanoTestFiles/DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 11K Jan 17 23:36 LxplusNanosZllconfig/NanoTestFiles/DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DY2JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DY2JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 11K Jan 18 00:03 LxplusNanosZllconfig/NanoTestFiles/DY2JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DY2JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 2.8K Jan 17 23:50 LxplusNanosZllconfig/NanoTestFiles/DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DY3JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 3.4K Jan 18 00:03 LxplusNanosZllconfig/NanoTestFiles/DY3JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DY3JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DY4JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 2.3K Jan 18 00:04 LxplusNanosZllconfig/NanoTestFiles/DY4JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DY4JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DYBBJetsToLL_M-10To70_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYBBJetsToLL_M-10To70_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+DYBBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYBBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 828 Jan 18 00:05 LxplusNanosZllconfig/NanoTestFiles/DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYBJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 4.9K Jan 17 23:51 LxplusNanosZllconfig/NanoTestFiles/DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+[DYBJetsToLL_M-50_Zpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 2.7K Jan 17 23:52 LxplusNanosZllconfig/NanoTestFiles/DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+[DYBJetsToLL_M-50_Zpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_BGenFilter_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 1.5K Jan 18 20:08 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_BGenFilter_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_BGenFilter_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DYJetsToLL_BGenFilter_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_BGenFilter_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYJetsToLL_BGenFilter_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_BGenFilter_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 6.2K Jan 18 20:08 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_BGenFilter_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_BGenFilter_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+[DYJetsToLL_BGenFilter_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_BGenFilter_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_BGenFilter_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYJetsToLL_BGenFilter_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_BGenFilter_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 3.8K Jan 18 20:07 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_BGenFilter_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_BGenFilter_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+[DYJetsToLL_BGenFilter_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 3.3K Jan 17 23:54 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+[DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 453 Jan 17 23:55 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 1.1K Jan 17 23:56 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+[DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 300 Jan 17 23:57 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 745 Jan 17 23:58 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+[DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 5.0K Jan 17 23:59 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-70to100_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 1.7K Jan 17 23:59 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8]
+DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 27K Jan 18 16:26 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext2
+-rw-r--r--. 1 legianni zh 53K Jan 18 16:27 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext2.txt
+[DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext2]
+DYJetsToLL_M-50_Zpt-150toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_M-50_Zpt-150toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1.txt
+DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2.txt
+DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext5
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext5.txt
+DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-100To250_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8.txt
+DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1.txt
+DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2.txt
+DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext5
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext5.txt
+DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8.txt
+DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1.txt
+DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2.txt
+DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8.txt
+DYJetsToLL_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext3
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext3.txt
+DYJetsToLL_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8.txt
+DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext1.txt
+DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_ext2.txt
+DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Pt-650ToInf_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8.txt
+DYJetsToLL_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+[DYJetsToLL_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 7.8K Jan 18 00:00 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+[DYJetsToLL_Zpt-100to200_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1]
+DYJetsToLL_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_TuneDown
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_TuneDown.txt
+DYJetsToLL_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_TuneUp
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_TuneUp.txt
+DYJetsToLL_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToLL_Zpt-200toInf_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+DYJetsToQQ_HT180_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYJetsToQQ_HT180_13TeV-madgraphMLM-pythia8.txt
+DYToLL_0J_13TeV-amcatnloFXFX-pythia8_backup
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYToLL_0J_13TeV-amcatnloFXFX-pythia8_backup.txt
+DYToLL_0J_13TeV-amcatnloFXFX-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYToLL_0J_13TeV-amcatnloFXFX-pythia8_ext1.txt
+DYToLL_1J_13TeV-amcatnloFXFX-pythia8_backup
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYToLL_1J_13TeV-amcatnloFXFX-pythia8_backup.txt
+DYToLL_1J_13TeV-amcatnloFXFX-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYToLL_1J_13TeV-amcatnloFXFX-pythia8_ext1.txt
+DYToLL_1J_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYToLL_1J_13TeV-amcatnloFXFX-pythia8.txt
+DYToLL_2J_13TeV-amcatnloFXFX-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYToLL_2J_13TeV-amcatnloFXFX-pythia8_ext1.txt
+DYToLL_2J_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/DYToLL_2J_13TeV-amcatnloFXFX-pythia8.txt
+EWK_LLJJ_MLL-50_MJJ-120_13TeV-madgraph-herwigpp
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/EWK_LLJJ_MLL-50_MJJ-120_13TeV-madgraph-herwigpp.txt
+EWK_LLJJ_MLL-50_MJJ-120_13TeV-madgraph-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/EWK_LLJJ_MLL-50_MJJ-120_13TeV-madgraph-pythia8.txt
+ggZH_HToBB_ZToLL_M125_13TeV_amcatnlo_pythia
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToLL_M125_13TeV_amcatnlo_pythia.txt
+ggZH_HToBB_ZToLL_M125_13TeV_powheg_herwigpp
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToLL_M125_13TeV_powheg_herwigpp.txt
+ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down]
+ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up]
+ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1]
+ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2]
+ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 1.8K Jan 18 00:10 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down]
+sampleName = ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up]
+sampleName = ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1]
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2]
+ggZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ggZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8.txt
+ST_s-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_s-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1.txt
+ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1.txt
+ST_t-channel_antitop_4f_inclusiveDecays_TuneCUETP8M2T4_13TeV-powhegV2-madspin
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_t-channel_antitop_4f_inclusiveDecays_TuneCUETP8M2T4_13TeV-powhegV2-madspin.txt
+ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1.txt
+ST_t-channel_top_4f_inclusiveDecays_TuneCUETP8M2T4_13TeV-powhegV2-madspin
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_t-channel_top_4f_inclusiveDecays_TuneCUETP8M2T4_13TeV-powhegV2-madspin.txt
+ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1.txt
+;[ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1]
+ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4
+-rw-r--r--. 1 legianni zh 604 Jan 18 00:01 LxplusNanosZllconfig/NanoTestFiles/ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4.txt
+[ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4]
+ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1.txt
+ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1.txt
+ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1
+-rw-r--r--. 1 legianni zh 3.9K Jan 18 20:09 LxplusNanosZllconfig/NanoTestFiles/ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1.txt
+[ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1_ext1]
+ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4.txt
+ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1_ext1.txt
+ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1.txt
+ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix_ext1.txt
+TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+TTJets_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/TTJets_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+TTJets_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/TTJets_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+TTJets_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/TTJets_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+TTJets_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/TTJets_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_ext1.txt
+TT_TuneCUETP8M2T4_13TeV-powheg-pythia8
+-rw-r--r--. 1 legianni zh 38K Jan 18 00:06 LxplusNanosZllconfig/NanoTestFiles/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8.txt
+[TT_TuneCUETP8M2T4_13TeV-powheg-pythia8]
+TT_TuneCUETP8M2T4down_13TeV-powheg-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/TT_TuneCUETP8M2T4down_13TeV-powheg-pythia8.txt
+WBJetsToLNu_Wpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WBJetsToLNu_Wpt-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+WBJetsToLNu_Wpt-40toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WBJetsToLNu_Wpt-40toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+WH_HToBB_WToLNu_M125_13TeV_amcatnloFXFX_madspin_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WH_HToBB_WToLNu_M125_13TeV_amcatnloFXFX_madspin_pythia8.txt
+WJetsToLNu_BGenFilter_Wpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WJetsToLNu_BGenFilter_Wpt-200toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+WjetsToLNu_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WjetsToLNu_Pt-50To100_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8.txt
+WminusH_HToBB_WToLNu_M125_13TeV_powheg_herwigpp
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WminusH_HToBB_WToLNu_M125_13TeV_powheg_herwigpp.txt
+WminusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WminusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8_ext1.txt
+WminusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WminusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8.txt
+WminusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WminusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8.txt
+WplusH_HToBB_WToLNu_M125_13TeV_powheg_herwigpp
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WplusH_HToBB_WToLNu_M125_13TeV_powheg_herwigpp.txt
+WplusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WplusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8_ext1.txt
+WplusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WplusH_HToBB_WToLNu_M125_13TeV_powheg_pythia8.txt
+WplusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WplusH_HToBB_WToQQ_M125_13TeV_powheg_pythia8.txt
+WWTo1L1Nu2Q_13TeV_amcatnloFXFX_madspin_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WWTo1L1Nu2Q_13TeV_amcatnloFXFX_madspin_pythia8.txt
+WWToLNuQQ_13TeV-powheg_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WWToLNuQQ_13TeV-powheg_ext1.txt
+WWToLNuQQ_13TeV-powheg
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WWToLNuQQ_13TeV-powheg.txt
+WW_TuneCUETP8M1_13TeV-pythia8
+-rw-r--r--. 1 legianni zh 3.6K Jan 18 00:06 LxplusNanosZllconfig/NanoTestFiles/WW_TuneCUETP8M1_13TeV-pythia8.txt
+[WW_TuneCUETP8M1_13TeV-pythia8]
+WZTo1L1Nu2Q_13TeV_amcatnloFXFX_madspin_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WZTo1L1Nu2Q_13TeV_amcatnloFXFX_madspin_pythia8.txt
+WZToLNu2QorQQ2L_aTGC_13TeV-madgraph-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/WZToLNu2QorQQ2L_aTGC_13TeV-madgraph-pythia8.txt
+WZ_TuneCUETP8M1_13TeV-pythia8
+-rw-r--r--. 1 legianni zh 448 Jan 18 00:07 LxplusNanosZllconfig/NanoTestFiles/WZ_TuneCUETP8M1_13TeV-pythia8.txt
+[WZ_TuneCUETP8M1_13TeV-pythia8]
+ZH_HToBB_ZToLL_M125_13TeV_amcatnloFXFX_madspin_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZH_HToBB_ZToLL_M125_13TeV_amcatnloFXFX_madspin_pythia8.txt
+ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down]
+[ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down]
+ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up]
+[ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up]
+ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1]
+[ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1]
+ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 1.5K Jan 18 00:08 LxplusNanosZllconfig/NanoTestFiles/ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8.txt
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down]
+sampleName = ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up]
+sampleName = ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up
+[ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down]
+sampleName = ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Down
+[ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up]
+sampleName = ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1]
+[ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext2]
+[ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8]
+[ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_ext1]
+ZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZH_HToBB_ZToQQ_M125_13TeV_powheg_pythia8.txt
+ZHiggs0L1fZH05ph0_HToBB_M-125_13TeV-JHUgenV6
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZHiggs0L1fZH05ph0_HToBB_M-125_13TeV-JHUgenV6.txt
+ZHiggs0L1_HToBB_M-125_13TeV-JHUgenV6
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZHiggs0L1_HToBB_M-125_13TeV-JHUgenV6.txt
+ZHiggs0MfZH05ph0_HToBB_M-125_13TeV-JHUgenV6
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZHiggs0MfZH05ph0_HToBB_M-125_13TeV-JHUgenV6.txt
+ZHiggs0M_HToBB_M-125_13TeV-JHUgenV6
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZHiggs0M_HToBB_M-125_13TeV-JHUgenV6.txt
+ZHiggs0PHfZH05ph0_HToBB_M-125_13TeV-JHUgenV6
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZHiggs0PHfZH05ph0_HToBB_M-125_13TeV-JHUgenV6.txt
+ZHiggs0PH_HToBB_M-125_13TeV-JHUgenV6
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZHiggs0PH_HToBB_M-125_13TeV-JHUgenV6.txt
+ZHiggs0PM_HToBB_M-125_13TeV-JHUgenV6
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZHiggs0PM_HToBB_M-125_13TeV-JHUgenV6.txt
+ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8
+-rw-r--r--. 1 legianni zh 4.5K Jan 18 00:09 LxplusNanosZllconfig/NanoTestFiles/ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8.txt
+[ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8]
+ZZTo2Q2Nu_13TeV_amcatnloFXFX_madspin_pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZZTo2Q2Nu_13TeV_amcatnloFXFX_madspin_pythia8.txt
+ZZ_TuneCUETP8M1_13TeV-pythia8
+-rw-r--r--. 1 legianni zh 0 Jan 17 23:23 LxplusNanosZllconfig/NanoTestFiles/ZZ_TuneCUETP8M1_13TeV-pythia8.txt

@@ -9,7 +9,7 @@ import os
 
 class TestSampleTreeMethods(unittest.TestCase):
 
-    scratchDirectory = os.environ['SCRATCH_DIR'] if 'SCRATCH_DIR' in os.environ else '.' 
+    scratchDirectory = os.environ['SCRATCH_DIR'] if 'SCRATCH_DIR' in os.environ else '.'
 
     def getTree(self):
         fileNames = [TestSampleTreeMethods.scratchDirectory + '/tree_%d.root'%i for i in range(10)]

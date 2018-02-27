@@ -13,8 +13,7 @@ class Jet :
 
 class BTagWeights(object):
 
-    def __init__(self, tree, sample):
-        self.sample = sample
+    def __init__(self):
         self.lastEntry = -1
         self.branchBuffers = {}
         self.branches = []

@@ -4,7 +4,7 @@ import os
 import ROOT
 
 # ------------------------------------------------------------------------------
-# this class can be used to apply and additional cut during sys step 
+# this class can be used to apply and additional cut during sys step
 # ------------------------------------------------------------------------------
 class Skim(object):
 
@@ -12,7 +12,7 @@ class Skim(object):
         self.cut = cut
         self.cutFormula = None
         self.debug = 'XBBDEBUG' in os.environ
-    
+
     # return True => keep event, return False => discard event
     def processEvent(self, tree):
 

@@ -1,0 +1,356 @@
+[legianni@lxplus073 small]$ condor_q
+
+
+-- Schedd: bigbird05.cern.ch : <128.142.165.14:9618?... @ 11/25/17 15:24:42
+OWNER    BATCH_NAME        SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
+legianni CMD: runAll.sh  11/25 15:08      _      4      _      4 83415.0 ... 83419.0
+
+4 jobs; 0 completed, 0 removed, 0 idle, 4 running, 0 held, 0 suspended
+[legianni@lxplus073 small]$ condor_rm user legianni
+All jobs matching constraint (Owner == "user" || Owner == "legianni") have been marked for removal
+[legianni@lxplus073 small]$ condor_rm user legianni
+
+Couldn't find/remove all jobs matching constraint (Owner == "user" || Owner == "legianni")
+[legianni@lxplus073 small]$ condor_q
+
+
+-- Schedd: bigbird05.cern.ch : <128.142.165.14:9618?... @ 11/25/17 15:25:01
+OWNER BATCH_NAME      SUBMITTED   DONE   RUN    IDLE   HOLD  TOTAL JOB_IDS
+
+0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended
+[legianni@lxplus073 small]$ cd /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/python/Xbb/python/
+[legianni@lxplus073 python]$ ./submit.py -T LxplusZll -F sysnew-sys -J sysnew --addCollections addbranches,weights -N 1 -S ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up 
+-bash: ./submit.py: No such file or directory
+[legianni@lxplus073 python]$ cd /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src/Xbb/python/                                                                  [legianni@lxplus073 python]$ ./submit.py -T LxplusZll -F sysnew-sys -J sysnew --addCollections addbranches,weights -N 1 -S ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up 
+whereToLaunch lxplus-condor
+run_locally False
+Start getting infos on all the samples (ParseInfo)
+==================================================
+
+samples_config is /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/LxplusZllconfig/samples_nosplit.ini
+ls: cannot access root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype/: No such file or directory
+@DEBUG: []
+Finished getting infos on all the samples (ParseInfo)
+=====================================================
+
+going to submit  1  jobs for sample  ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up  ..
+COMMAND: runAll.sh sysnew_ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up_part0 LxplusZll sysnew 1 noid  --sampleIdentifier=ZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8_CUETP8M1Up  --addCollections=addbranches,weights  --fileList=base64:eNqFzE1qwzAQBtATJZqRieNtXAIyxCAa2dBsPkw7xF7EEuOf4py+ULroLu8Az0xzVDHLJGqSqMbnczCtK0snKW2tPYAoMzcHF2JZ4hbi5YKa7QGcBWmR4ncvd6Rt7oeuwFtzDr6ouUm/CdzZ+w/8NXjZ+O1/AbwvY1Vdl8dDlPP6tNqdb+qoQxy/+IiC1HYTLHGOoN342UvVYs13Kxs+UpER2FrLbIiIzKwi4L3GOP8AUi5PSQ==                       
+the command is  condor_submit condor_sysnew_2017_11_25-15_26_10_-306cecac882aa4e3.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83420.
+[legianni@lxplus073 python]$ ./submit.py -T LxplusZll -F sysnew-sys -J sysnew --addCollections addbranches,weights -N 1 -S DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8    
+whereToLaunch lxplus-condor
+run_locally False
+Start getting infos on all the samples (ParseInfo)
+==================================================
+
+samples_config is /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/LxplusZllconfig/samples_nosplit.ini
+ls: cannot access root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype/: No such file or directory
+@DEBUG: []
+Finished getting infos on all the samples (ParseInfo)
+=====================================================
+
+going to submit  4  jobs for sample  DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  ..
+COMMAND: runAll.sh sysnew_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part0 LxplusZll sysnew 1 noid  --sampleIdentifier=DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqlzN1qwyAUAOAncudoSertuhWSEUE2K/TqkLYSA4uKP4G8/R5i3wN8UGrMDpYcW4Lkj0J+XZYC/vGAUFv6dQWs6ODz/uVqMXGaSLEOaTCsR6xRIpJpwX3crkZLxYmfjLNsm19LnpNXk2LpqH6dJdjhcqHhqvWdrOjoH6M+JNF3C+P407bNZd6r910wfVMxrzG8+JkkZjEXEsh7MnkOT+9GS3vPdgH8jFxI4h2XeAJERKjZOeJvOcb6B9qdWFo=                                                                                                                                                     
+the command is  condor_submit condor_sysnew_2017_11_25-15_26_43_-7b4ed209e4145832.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83421.
+COMMAND: runAll.sh sysnew_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll sysnew 1 noid  --sampleIdentifier=DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqlzN1qwyAUAOAncudoSertuhWSEUE2K/TqkLYSA4uKP4G8/R5i3wN8UGrMDpYcW4Lkj0J+XZYC/vGAUFv6dQWs6ODz/uVqMXGaSLEOaTCsR6xRIpJpwX3crkZLxYmfjLNsm19LnpNXk2LpqH6dJdjhcqHhqvWdrOjoH6M+JNF3C+P407bNZd6r910wfVMxrzG8+JkkZjEXEsh7MnkOT+9GS3vPdgH8jFxI4h2XeAJERKjZOeL4lmOsfzI0WIo=                                                                                                                                                     
+the command is  condor_submit condor_sysnew_2017_11_25-15_26_43_149a9af576ce0253.sub
+Submitting job(s).       
+1 job(s) submitted to cluster 83422.
+COMMAND: runAll.sh sysnew_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part2 LxplusZll sysnew 1 noid  --sampleIdentifier=DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqlzN1qwyAUAOAncudoSertuhWSEUE2K/TqkLYSA4uKP4G8/R5i3wN8UGrMDpYcW4Lkj0J+XZYC/vGAUFv6dQWs6ODz/uVqMXGaSLEOaTCsR6xRIpJpwX3crkZLxYmfjLNsm19LnpNXk2LpqH6dJdjhcqHhqvWdrOjoH6M+JNF3C+P407bNZd6r910wfVMxrzG8+JkkZjEXEsh7MnkOT+9GS3vPdgH8jFxI4h2XeAJERKjZOeKIbznG+geJ7Fi6                                                                                                                                                     
+the command is  condor_submit condor_sysnew_2017_11_25-15_26_43_-781e3cfd263bd911.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83423.
+COMMAND: runAll.sh sysnew_DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part3 LxplusZll sysnew 1 noid  --sampleIdentifier=DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqlzEtqwzAQANATqTOjYEfbpg3YxQLRKoasBicRlqG2hD4G376H6DvAg1xCcjCnUCNEf2T2yzxn8I8HbKXGX5dhlA183r9cyTYMA2vRIHdWtIglKES2dXMft6s1ShPTybpRrNNrTlP0etAiHsUvk4Kxu1y4uxpz51E2/I/RHIr5u259/1PX1SVq9fsuhbnpkJawvejMCpOcMkuklm2atqd3/ch7K3YJdEaSiqkhhSdARISSnGNCekshlD+J8li7                                                                                                                                                     
+the command is  condor_submit condor_sysnew_2017_11_25-15_26_43_3f43c36c4002663f.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83424.
+[legianni@lxplus073 python]$ ./submit.py -T LxplusZll -F sysnew-sys -J sysnew --addCollections addbranches,weights -N 1 -S DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8                  
+whereToLaunch lxplus-condor
+run_locally False
+Start getting infos on all the samples (ParseInfo)
+==================================================
+
+samples_config is /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/LxplusZllconfig/samples_nosplit.ini
+ls: cannot access root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype/: No such file or directory
+@DEBUG: []
+Finished getting infos on all the samples (ParseInfo)
+=====================================================
+
+going to submit  5  jobs for sample  DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  ..
+COMMAND: runAll.sh sysnew_DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part0 LxplusZll sysnew 1 noid  --sampleIdentifier=DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqdzN1qwyAUAOAncsdjltTbdSs0I4JsVujVIV0lBhYVfwJ5+73Dvgf4oNSYHSw5tgTJH4X8uiwF/OMBobb06wpY0cPHvft0tZg4TaQY8hp7TqYF9367GC0VEnbGWbbNzyXPyatJsXRUv84S7PV8putF6ztZ0dN/Kn1Ioq8WxvG7bZvLOKi3XTB9UzGvMTzxRJJnMRcSHAcyeQ4/3o2W9oHtCHjiKCRhx8UrAuecQ83OEb7kGOsfsG9Uzg==                                                                                                                                                                       
+the command is  condor_submit condor_sysnew_2017_11_25-15_27_30_-766e8031795d9175.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83425.
+COMMAND: runAll.sh sysnew_DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll sysnew 1 noid  --sampleIdentifier=DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqdzEtqwzAQANATqTMj1463TRuIiwWidQRZDU4jLEMtCX0Mvn3v0HeAB7mEZGFJoUaI7sjs1mXJ4B4P8KXGX5vByBY+7s2nLXkK48hKEJbQIk/V2/fbZdK9IqZmskZs83NJc3RqVCIexa1zD+Z6PvP1ovWdjWz5P5U+euav6ofhu26bTdSpt10KfVMhrcE/6cQ9JjlnlkgdT2n2P84OhvdO7AR0QpI9U4PylQAREUqylglfUgjlDwR6VP4=                                                                                                                                                                       
+the command is  condor_submit condor_sysnew_2017_11_25-15_27_30_-33c2ad1f6838558e.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83426.
+COMMAND: runAll.sh sysnew_DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part2 LxplusZll sysnew 1 noid  --sampleIdentifier=DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqdzEtqwzAQANATqTMj1463TRuIiwWidQRZDU4jLEMtCX0Mvn3v0HeAB7mEZGFJoUaI7sjs1mXJ4B4P8KXGX5vByBY+7s2nLXkK48hKEJbQIk/V2/fbZdK9IqZmskZs83NJc3RqVCIexa1zD+Z6PvP1ovWdjWz5P5U+euav6ofhu26bTdSpt10KfVMhrcE/6cQ9JjlnlkgdT2n2P84OhvdO7AR0QpI9U4PylQAREUqylgnxJYVQ/gBYplUu                                                                                                                                                                       
+the command is  condor_submit condor_sysnew_2017_11_25-15_27_30_-3f87f0a72a736b63.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83427.
+COMMAND: runAll.sh sysnew_DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part3 LxplusZll sysnew 1 noid  --sampleIdentifier=DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqdzN1qwyAUAOAncsdjltTbdSs0I4JsVujVIV0lBhYVfwJ5+73Dvgf4oNSYHSw5tgTJH4X8uiwF/OMBobb06wpY0cPHvft0tZg4TaQY8hp7TqYF9367GC0VEnbGWbbNzyXPyatJsXRUv84S7PV8putF6ztZ0dN/Kn1Ioq8WxvG7bZvLOKi3XTB9UzGvMTzxRJJnMRcSHAcyeQ4/3o2W9oHtCHjiKCRhx8UrAuecQ83OEeJLjrH+AQSAVP8=                                                                                                                                                                       
+the command is  condor_submit condor_sysnew_2017_11_25-15_27_30_-158aeb75502b21ee.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83428.
+COMMAND: runAll.sh sysnew_DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part4 LxplusZll sysnew 1 noid  --sampleIdentifier=DY3JetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqdzN1qwyAUAOAncsdjltTbdSs0I4JsVujVIV0lBhYVfwJ5+73Dvgf4oNSYHSw5tgTJH4X8uiwF/OMBobb06wpY0cPHvft0tZg4TaQY8hp7TqYF9367GC0VEnbGWbbNzyXPyatJsXRUv84S7PV8putF6ztZ0dN/Kn1Ioq8WxvG7bZvLOKi3XTB9UzGvMTzxRJJnMRcSHAcyeQ4/3o2W9oHtCHjiKCRhx8UrAuecQ83OEYqXHGP9AwSGVQA=                                                                                                                                                                       
+the command is  condor_submit condor_sysnew_2017_11_25-15_27_30_61827cc81f558b92.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83429.
+[legianni@lxplus073 python]$ ./submit.py -T LxplusZll -F sysnew-sys -J sysnew --addCollections addbranches,weights -N 1 -S DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8               
+whereToLaunch lxplus-condor
+run_locally False
+Start getting infos on all the samples (ParseInfo)
+==================================================
+
+samples_config is /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/LxplusZllconfig/samples_nosplit.ini
+ls: cannot access root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/small/sys/v1_vtype/: No such file or directory
+@DEBUG: []
+Finished getting infos on all the samples (ParseInfo)
+=====================================================
+
+going to submit  51  jobs for sample  DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  ..
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part0 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOcJDjrH+AREVUkc=           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_30564e378c4b221.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83430.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part1 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1o63TRuIiwUidQRZDU4iLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4B4P8KXGX5vByAa+7vRtSx7DMLASDfJYvf28nUfdKWJ6G60R6/Sa0xSdGpSIe3HL1IG5nE58OWt9ZyMb/m+j9475Wn3f/9R1tYla9bFJoW8qpCX4Fx25wySnzBKp5TFN/ulsb3hrxUZARyTZMbXYvCMgIkJJ1jLhIYVQ/gBiilJ3           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-38f320f5e4d94de.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83431.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part2 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1o63TRuIiwUidQRZDU4iLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4B4P8KXGX5vByAa+7vRtSx7DMLASDfJYvf28nUfdKWJ6G60R6/Sa0xSdGpSIe3HL1IG5nE58OWt9ZyMb/m+j9475Wn3f/9R1tYla9bFJoW8qpCX4Fx25wySnzBKp5TFN/ulsb3hrxUZARyTZMbXYvCMgIkJJ1jIhHlII5Q+0L1Kn           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-20b1e43fb9ba1802.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83432.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part3 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1o63TRuIiwUidQRZDU4iLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4B4P8KXGX5vByAa+7vRtSx7DMLASDfJYvf28nUfdKWJ6G60R6/Sa0xSdGpSIe3HL1IG5nE58OWt9ZyMb/m+j9475Wn3f/9R1tYla9bFJoW8qpCX4Fx25wySnzBKp5TFN/ulsb3hrxUZARyTZMbXYvCMgIkJJ1jIhHVII5Q+0NVKo           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_4b7bfaf307688b7a.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83433.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part4 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1o63TRuIiwUidQRZDU4iLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4B4P8KXGX5vByAa+7vRtSx7DMLASDfJYvf28nUfdKWJ6G60R6/Sa0xSdGpSIe3HL1IG5nE58OWt9ZyMb/m+j9475Wn3f/9R1tYla9bFJoW8qpCX4Fx25wySnzBKp5TFN/ulsb3hrxUZARyTZMbXYvCMgIkJJ1jKhPKQQyh+0O1Kp           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-72abc25a675d7947.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83434.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part5 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1I63TRuIgwWidQRZDU4jLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4J5P8KXGX5vByAY+H3SzJY9hGFiJBnms3n7cL6PuFDEdR2vEOr3mNEWnBiXiXtwydWCu5zNfL1o/2MiG/9vovWP+qr7vv+u62kStet+k0HcV0hL8i07cYZJTZonU8pgm/+Nsb3hrxUZAJyTZMbXYvCEgIkJJ1jLh8ZBCKH+0QVKq           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_74ba545bf60ff121.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83435.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part6 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOjxo63TRuIiwUiVQxZDU4jLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4J5P8KXGX5thlA18PujLlmzCMLASDbKp3n7cL0Z3ipjejB3FOr3mNEWnBiXiXtwydTBez2e+XrR+8Cgb/m+j9475Vn3ff9d1tYla9b5Joe8qpCX4F524wySnzBKpZZMm/+NsP/LWio2ATkiyY2qxOSIgIkJJ1jLh8ZBCKH+0R1Kr           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-2ac49b7bac95318b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83436.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part7 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOjVo63TRuIiwUmVQxZDUoiLEMtGX0Mvn3P0HeAB7nE5GBKsa6w+j2zn6cpg388IJS6/roMo1TwdadvV7KJfc9aKGRTg/u8nc3QamJ6M24Ui31Nya5e91qse/GzbWG8nE58OQ/DnUep+L/NsLfM1xq67qcui0vU6I9NiuGmY5pjeNGRW0zSZpZIDZtkw9O7buStERsBHZFky9SgekdARISSnGNCdUgxlj+0TVKs           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-547d85993365f195.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83437.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part8 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzNFqwyAUANAvSu+9brG+rluhGRGks0KfLmkrMbBoUBPI3+8bdj7gQKkpexhzWhdYwl44TONYIDweEOu6/PoCTrTwdadvX4tNfc+6aZHtGv3n7WyN0sT0Zr1r5uE15mEJutfNstcwDQrc5XTiy9mYOzvR8n8bsyvm6xq77medZ59J6o9NNOamU55SfNGRFWYxFBZIkm0e4jP4zvEmm42AjkhCMUls3xEQEaFm75lQHnJK9Q+0U1Kt           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-41db404b0ad15b0c.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83438.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part9 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzFlqwzAQANATqTOj1stv0wbiYoFoHUG+BicRlqGWhBaDb98z9B3gQS4hWVhSqBGiOzK7dVkyuPsdfKnx12YwsoHPG33ZkqcwjqxEgzxVbz+u50n3ipheJ2vENj+XNEenRiXiUdw692AupxNfzlrf2MiG/9voo2f+rn4Yfuq22UStet+l0FcV0hr8kzruMck5s0RqeUqzfzg7GN5bsRNQhyR7phabNwRERCjJWibsXlII5Q+0WVKu           
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-11929142fbebad2b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83439.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part10 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1o62TRuIiwUidQRZDU4iLENtCX0Mvn3P0HeAB7mE5GBKoUaIfs/s52nK4B8PWEuNvy6DlQ183enblTyEvmctGuShru7zdh6M0sT0NjgrlvE1pTF63WsR9+LnUYG9nE58ORtzZysb/m9jdsV8rWvX/dRlcYla/bFJYW46pDmsLzqywiTHzBKp5SGN69O7zvLWio2AjkhSMbXYvCMgIkJJzjGhOqQQyh+0X1Kv          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-17e9e28da40a682e.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83440.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part11 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzNFqwyAUANAvyu69bknd47oVmhJBNiv06ZKuEgONippA/n7fsPMBB0qN2cGU45og+b2wn6epgL/fIdQ1PV0BK1r4utHF1WLiMLBqWmSzBvd5PRktFTG9GmebZXxMeUxeDapJe/XzKMGej0c+n7S+sRUt/7fRu2T+XkPf/6zL4jJ16mMTjb6qmOcYHnRgiVmMhQVSxyaP4de73vLWNRsBHZCEZOqwfUNARISanWPC95ccY/0DtGVSsA==      
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-79e79e7304901798.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83441.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part12 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOUI85BjrH2KQUng=          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-744415cc74f30e6f.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83442.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part13 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1o63TRuIiwUidQRZDU4iLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4B4P8KXGX5vByAa+7vRtSx7DMLASDfJYvf28nUfdKWJ6G60R6/Sa0xSdGpSIe3HL1IG5nE58OWt9ZyMb/m+j9475Wn3f/9R1tYla9bFJoW8qpCX4Fx25wySnzBKp5TFN/ulsb3hrxUZARyTZMbXYvCMgIkJJ1jIRHlII5Q+0NlKo          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-713fe732d0b09c8c.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83443.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part14 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOULEQ46x/gG0PFKp          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_e2ab698945b587c.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83444.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part15 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOUIUhxxj/QO0QlKq          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-3c2df73cc1f3ce42.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83445.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part16 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssdjl9TbdSs0JYJsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA2+uFhPHkRTrOJkW3Mf9YrRUSHg0zrJ1es15Sl6NiqW9+mWSYK/nM10vWj/Iio7+2+hdEn21MAzfbV1dxl69b4Lpu4p5ieGFJ5I8i6mQ4NiTyVP48W6wtPVsQ8ATRyEJe969ceCcc6jZOUI8HnKM9Q+0SFKr          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_6fe4ae0d2244edbe.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83446.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part17 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjmtTbdSs0I4J0VujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA79cLSaOIynWcTItuI/7xWipkPDNOMvW6TXnKXk1Kpb26pdJgr2ez3S9aP0gKzr6b6N3SXRrYRi+27q6jL163wTTdxXzEsMLTyR5FlMhwbEnk6fw491gaevZhoAnjkIS9rw7cuCcc6jZOUI8HnKM9Q+0TlKs          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_66e891b540b212af.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83447.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part18 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATOTOjVo63TRuIiwUiVQxZDU4iLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4B4P8KXGX5thFBK+7vRtSzZhGFg1EtlUbz9vZ6M7RUxvxo7NOr3mNEWnBtXEvbhl6mC8nE58OWt951FI/m+j9475Wn3f/9R1tYla9bGJRt9USEvwLzpyh0lMmQVSyyZN/ulsP/LWNhsBHZFEx9SifEdARISSrGUieUghlD+0VFKt          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_18e00f3c6b8686d6.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83448.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part19 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0qdCrg20lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06woY0cHXHb9dLVMcR1Ks4zS14D5v50lLhYRvkzNsta852+TVqFjaq1+sBHM5nehy1vpORnT030bvkujawjD8tHV1GXv1sQmmbyrmJYYXHknyLGwhwbGnKdvw9G4wtPVsQ8AjRyEJe969c+Ccc6jZOULsDznG+ge0WlKu          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-363e342e82cbb479.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83449.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part20 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsfjlsTbdSs0I4JsVujVIW0lBhYVfwJ5+z3Dvgf4oNSYHSw5tgTJH4X8uiwF/P0Oobb06wpY0cHnDb9cLSZOEynWcTItuI/r2WipkPDVOMu2+bnkOXk1KZaO6tdZgr2cTnQ5a30jKzr6b6MPSfTdwjj+tG1zGXv1vgumryrmNYYnDiR5FnMhwbEnk+fw8G60tPdsR8CBo5CEPe/eOHDOOdTsHCEOLznG+ge0YFKv          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-46f956467442f54a.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83450.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part21 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOUKUhxxj/QO0ZlKw          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_308e3f4e867ab54b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83451.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part22 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnyo7HLam7XLdCUyLIZoVeHewqMdCo+BPI2+8Z9j3AB6XG7GDOsSVIfi/kl3ku4O93CLWlpytgeA9fN7y4WnScJpJdz0i34D6vJ62ERMJX7Uy32secbfJykl3aq1+sAHM+Hul8UupGhvf030btgui7hXH8aevqMg7yY+OdusqYlxgeeCDBMreFOMOBdLbh17vR0DZ0GwIeGHJBOLD+jQFjjEHNzhHi+0uOsf4BtGxSsQ==      
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_139324182e65e2d3.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83452.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part23 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOUJxyDHWP2KWUnk=          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_38b2c57487234ee7.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83453.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part24 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1o63TRuIiwUidQRZDU4iLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4B4P8KXGX5vByAa+7vRtSx7DMLASDfJYvf28nUfdKWJ6G60R6/Sa0xSdGpSIe3HL1IG5nE58OWt9ZyMb/m+j9475Wn3f/9R1tYla9bFJoW8qpCX4Fx25wySnzBKp5TFN/ulsb3hrxUZARyTZMbXYvCMgIkJJ1jJJPKQQyh+0PVKp          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-29506765ba37bda8.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83454.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part25 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOUKBhxxj/QO0Q1Kq          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_1322fc52a800624e.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83455.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part26 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOUIhDjnG+ge0SVKr          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-6b4ab397154cde57.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83456.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part27 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssdjl9TbdSs0JYJsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA2+uFhPHkRTrOJkW3Mf9YrRUSHg0zrJ1es15Sl6NiqW9+mWSYK/nM10vWj/Iio7+2+hdEn21MAzfbV1dxl69b4Lpu4p5ieGFJ5I8i6mQ4NiTyVP48W6wtPVsQ8ATRyEJe969ceCcc6jZOUJxPOQY6x+0T1Ks          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-31ae0ff2c5a3e521.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83457.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part28 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjmtTbdSs0I4J0VujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA79cLSaOIynWcTItuI/7xWipkPDNOMvW6TXnKXk1Kpb26pdJgr2ez3S9aP0gKzr6b6N3SXRrYRi+27q6jL163wTTdxXzEsMLTyR5FlMhwbEnk6fw491gaevZhoAnjkIS9rw7cuCcc6jZOUJxPOQY6x+0VVKt          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_2faf3c34d15ab37a.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83458.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part29 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOjVo62TRuIiwUmdQRZDUoiLENtGX0Mvn3P0HeAB7nE5GFMsa6whj1zmMYxQ3g8YCl1/fUZrFTwdadvX/IQu46NUMhDXfzn7Tz02hDT2+CtmN1rTG4NpjNi3UuYnAZ7OZ34cu77O1up+L9Nv2vma13a9qfOs0/UmI9Niv5mYpri8qIja0zSZZZIDQ/JLc/gW8tbIzYCOiJJzdSgekdARISSvGeS6pBiLH+0W1Ku          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-250a1ffc78edab22.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83459.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part30 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0qdCrg20lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06woY0cHXHb9dLVMcR1Ks4zS14D5v50lLhYRvkzNsta852+TVqFjaq1+sBHM5nehy1vpORnT030bvkujawjD8tHV1GXv1sQmmbyrmJYYXHknyLGwhwbGnKdvw9G4wtPVsQ8AjRyEJe969c+Ccc6jZOULRH3KM9Q+0YVKv          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_21a04a1e3bece8bf.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83460.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part31 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsfjlsTbdSs0I4JsVujVIW0lBhYVfwJ5+z3Dvgf4oNSYHSw5tgTJH4X8uiwF/P0Oobb06wpY0cHnDb9cLSZOEynWcTItuI/r2WipkPDVOMu2+bnkOXk1KZaO6tdZgr2cTnQ5a30jKzr6b6MPSfTdwjj+tG1zGXv1vgumryrmNYYnDiR5FnMhwbEnk+fw8G60tPdsR8CBo5CEPe/eOHDOOdTsHKEYXnKM9Q+0Z1Kw          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-73daa8e43051f7a8.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83461.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part32 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjltTbdSs0I4J0VujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHXHb9dLSaOIynWcTItuM/b2WipkPDNOMvW6TXnKXk1Kpb26pdJgr2cTnQ5a30nKzr6b6N3SXRtYRh+2rq6jL362ATTNxXzEsMLjyR5FlMhwbEnk6fw9G6wtPVsQ8AjRyEJe969c+Ccc6jZOUIhDznG+ge0bVKx          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-44c2a3f66055ff38.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83462.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part33 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnyo7HLam7XLdCUyLIZoVeHewqMdCo+BPI2+8Z9j3AB6XG7GDOsSVIfi/kl3ku4O93CLWlpytgeA9fN7y4WnScJpJdz0i34D6vJ62ERMJX7Uy32secbfJykl3aq1+sAHM+Hul8UupGhvf030btgui7hXH8aevqMg7yY+OdusqYlxgeeCDBMreFOMOBdLbh17vR0DZ0GwIeGHJBOLD+jQFjjEHNzhHy95ccY/0DtHNSsg==      
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_78632fe5ea809c18.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83463.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part34 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssdjl9TbdSs0JYJsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA2+uFhPHkRTrOJkW3Mf9YrRUSHg0zrJ1es15Sl6NiqW9+mWSYK/nM10vWj/Iio7+2+hdEn21MAzfbV1dxl69b4Lpu4p5ieGFJ5I8i6mQ4NiTyVP48W6wtPVsQ8ATRyEJe969ceCcc6jZOcLjIcdY/wBinFJ6          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-1b237eb5460ff4d0.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83464.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part35 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOj1I63TRuIgwWidQRZDU4jLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4J5P8KXGX5vByAY+H3SzJY9hGFiJBnms3n7cL6PuFDEdR2vEOr3mNEWnBiXiXtwydWCu5zNfL1o/2MiG/9vovWP+qr7vv+u62kStet+k0HcV0hL8i07cYZJTZonU8pgm/+Nsb3hrxUZAJyTZMbXYvCEgIkJJ1jId8ZBCKH+0RFKq          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-6c059b47cf4fb889.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83465.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part36 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssdjl9TbdSs0JYJsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA2+uFhPHkRTrOJkW3Mf9YrRUSHg0zrJ1es15Sl6NiqW9+mWSYK/nM10vWj/Iio7+2+hdEn21MAzfbV1dxl69b4Lpu4p5ieGFJ5I8i6mQ4NiTyVP48W6wtPVsQ8ATRyEJe969ceCcc6jZOcIjHnKM9Q+0SlKr          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_1b62cc30be722a98.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83466.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part37 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssdjl9TbdSs0JYJsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA2+uFhPHkRTrOJkW3Mf9YrRUSHg0zrJ1es15Sl6NiqW9+mWSYK/nM10vWj/Iio7+2+hdEn21MAzfbV1dxl69b4Lpu4p5ieGFJ5I8i6mQ4NiTyVP48W6wtPVsQ8ATRyEJe969ceCcc6jZOcKjOOQY6x+0UFKs          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_79f25359fa4f3119.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83467.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part38 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsdjltTbdSs0I4JsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHSw5tgTJH4X8uiwF/OMBobb06wpY0cPHHT9dLSZOEynWczItuPfbxWipkLAzzrJtfi55Tl5NiqWj+nWWYK/nM10vWt/Jip7+2+hDEn21MI7fbdtcxkG97YLpm4p5jeGJJ5I8i7mQ4DiQyXP48W60tA9sR8ATRyEJB96/cuCcc6jZOcKue8kx1j+0VlKt          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_705375cad20aee91.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83468.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part39 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsdjm9TbdSs0I4JsVujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHnHb9cLSaOIynWcTItuI/bxWipkPBgnGXr9JrzlLwaFUt79cskwV7PZ7petL6TFR39t9G7JPpuYRh+2rq6jL163wTTNxXzEsMLTyR5FlMhwbEnk6fw9G6wtPVsQ8ATRyEJe94dOXDOOdTsHOHh+JZjrH+0XFKu          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-5ba11dfa52ae2a3b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83469.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part40 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnSo/HztTbdSs0JYJsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpYLuDzgTdXi4njSKoTjEwL7uN+MVoqJDwaZ7t1es15Sl6Nqkt79cskwV7PZ7petH6Q5YL+2+hdEn21MAzfbV1dxl69b7zTdxXzEsMLTyRZ5lMhzrAnk6fw491gaeu7DQFPDLkk7Jl4Y8AYY1Czc4RHccgx1j+0YlKv          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-257e0104eb8e94b5.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83470.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part41 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssdjF5vbdSs0JYJsqdCrg10lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06woY0cHnA2+ulimOIynWcZpacB/3y6R7hYTHyRm22tecbfJqVCzt1S+2B3M9n+l60fpBRnT030bvPdFXC8Pw3dbVZZTqfRNM31XMSwwvPFHPs7CFBEdJU7bhx7vB0CbZhoAnjqInlLx748A551Czc4RHecgx1j+0aFKw          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-33b6b5153bb052ba.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83471.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part42 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsdjl8TbdSs0I4JsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHSw5tgTJH4X8uiwF/OMBobb06wpY0cHHHT9dLSZOEynWcTItuPfbxWipkPBknGXb/FzynLyaFEtH9esswV7PZ7petL6TFR39t9GHJPpqYRy/27a5jL162wXTNxXzGsMTB5I8i7mQ4NiTyXP48W60tPdsR8CBo5CEPe9eOXDOOdTsHOFpeMkx1j+0blKx          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-21b2ff0389f16cc4.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83472.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part43 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssdjl9TbdSs0JYJsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA2+uFhPHkRTrOJkW3Mf9YrRUSHg0zrJ1es15Sl6NiqW9+mWSYK/nM10vWj/Iio7+2+hdEn21MAzfbV1dxl69b4Lpu4p5ieGFJ5I8i6mQ4NiTyVP48W6wtPVsQ8ATRyEJe969ceCcc6jZOcKjPOQY6x+0dFKy          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-251269fd444543cb.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83473.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part44 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsdjlzS7XLtCMyLIZoVeHewqMbCo+BPI2+8Z9j3AB6XG7GDOsSVIfi/kl3ku4B8PCLWlX1fAiA4+7vjpatFxmkiyjpNuwZ1vF60GiYQH7Qxb7XPONnk5SZb26hc7gLmeTnS9KHUnIzr6b6P2geirhXH8buvqMvbyfRNM3WTMSwxPPNLAs7CFBMeedLbhx7vR0NazDQGPHMVA2PPulQPnnEPNzhEe3l5yjPUPtHpSsw==      
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-7f5ee9cb6d0ed85f.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83474.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part45 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjmtTbdSs0I4J0VujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA79cLSaOIynWcTItuI/7xWipkPDNOMvW6TXnKXk1Kpb26pdJgr2ez3S9aP0gKzr6b6N3SXRrYRi+27q6jL163wTTdxXzEsMLTyR5FlMhwbEnk6fw491gaevZhoAnjkIS9rw7cuCcc6jZOcLjIcdY/wBiolJ7          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_3189bf27c9ada9b.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83475.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part46 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzEtqwzAQANATKTOjxo63TRuIiwUiVQxZDU4jLEMtCX0Mvn3P0HeAB7mEZGFOoUaIbs/slnnO4J5P8KXGX5thlA18PujLlmzCMLASDbKp3n7cL0Z3ipjejB3FOr3mNEWnBiXiXtwydTBez2e+XrR+8Cgb/m+j9475Vn3ff9d1tYla9b5Joe8qpCX4F524wySnzBKpZZMm/+NsP/LWio2ATkiyY2qxOSIgIkJJ1jId8ZBCKH+0S1Kr          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_33c17c5081b9dcff.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83476.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part47 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjmtTbdSs0I4J0VujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA79cLSaOIynWcTItuI/7xWipkPDNOMvW6TXnKXk1Kpb26pdJgr2ez3S9aP0gKzr6b6N3SXRrYRi+27q6jL163wTTdxXzEsMLTyR5FlMhwbEnk6fw491gaevZhoAnjkIS9rw7cuCcc6jZOcIjHnKM9Q+0UVKs          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-6d3a881f5ba45ca6.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83477.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part48 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAnssfjmtTbdSs0I4J0VujVIV0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/PMJobb06wpY0cHnA79cLSaOIynWcTItuI/7xWipkPDNOMvW6TXnKXk1Kpb26pdJgr2ez3S9aP0gKzr6b6N3SXRrYRi+27q6jL163wTTdxXzEsMLTyR5FlMhwbEnk6fw491gaevZhoAnjkIS9rw7cuCcc6jZOcKjOOQY6x+0V1Kt          
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-583af959f29b505d.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83478.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part49 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsdjm9TbdSs0I4JsVujVIW0lBhYVfwJ5+z3Dvgf4oNSYHcw5tgTJ74X8Ms8F/OMBobb06wpY0cHnHb9cLSaOIynWcTItuI/bxWipkPBgnGXr9JrzlLwaFUt79cskwV7PZ7petL6TFR39t9G7JPpuYRh+2rq6jL163wTTNxXzEsMLTyR5FlMhwbEnk6fw9G6wtPVsQ8ATRyEJe94dOXDOOdTsHOHx8JZjrH+0XVKu  
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-6975ec247708b5e8.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83479.
+COMMAND: runAll.sh sysnew_DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_part50 LxplusZll sysnew 1 noid  --sampleIdentifier=DY1JetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8  --addCollections=addbranches,weights  --fileList=base64:eNqVzN1qwyAUAOAncsfjktTbdSs0I4JsVujVIV0lBhYVfwJ5+z3Dvgf4oNSYHSw5tgTJH4X8uiwF/OMBobb06wpY0cPHHT9dLSZOEynWczItuPfbxWipkPDVOMu2+bnkOXk1KZaO6tdZgr2ez3S9aH0nK3r6b6MPSfTVwjh+t21zGQf1tgumbyrmNYYnnkjyLOZCguNAJs/hx7vR0j6wHQFPHIUkHHjfceCcc6jZOcKue8kx1j+0Y1Kv  
+the command is  condor_submit condor_sysnew_2017_11_25-15_28_16_-3418d8cc06a08962.sub
+Submitting job(s).
+1 job(s) submitted to cluster 83480.
+[legianni@lxplus073 python]$ condor_q
+
+
+-- Schedd: bigbird05.cern.ch : <128.142.165.14:9618?... @ 11/25/17 15:30:57
+OWNER    BATCH_NAME        SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
+legianni CMD: runAll.sh  11/25 15:26      _     50     11     61 83420.0 ... 83480.0
+
+61 jobs; 0 completed, 0 removed, 11 idle, 50 running, 0 held, 0 suspended
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ 
+[legianni@lxplus073 python]$ condor_q
+
+
+-- Schedd: bigbird05.cern.ch : <128.142.165.14:9618?... @ 11/25/17 15:35:04
+OWNER    BATCH_NAME        SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
+legianni CMD: runAll.sh  11/25 15:26      _      _     61     61 83420.0 ... 83480.0
+
+61 jobs; 0 completed, 0 removed, 61 idle, 0 running, 0 held, 0 suspended
+[legianni@lxplus073 python]$ condor_q
+
+
+-- Schedd: bigbird05.cern.ch : <128.142.165.14:9618?... @ 11/25/17 15:35:21
+OWNER    BATCH_NAME        SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
+legianni CMD: runAll.sh  11/25 15:26      _      _     61     61 83420.0 ... 83480.0
+
+61 jobs; 0 completed, 0 removed, 61 idle, 0 running, 0 held, 0 suspended
+[legianni@lxplus073 python]$ 

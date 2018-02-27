@@ -5,7 +5,7 @@ import array
 
 class EWKweights(object):
 
-    def __init__(self, tree, sample):
+    def __init__(self, sample=None):
         self.lastEntry = -1
         self.branchBuffers = {}
         self.branches = []
@@ -14,7 +14,11 @@ class EWKweights(object):
         for wName in ['EWKw', 'EWKwSIG', 'EWKwVJets']:
             self.branchBuffers[wName] = np.zeros(3, dtype=np.float32)
             self.branches.append({'name': wName, 'formula': self.getVectorBranch, 'arguments': {'branch': wName, 'length':3}, 'length': 3})
+        if sample:
+            self.customInit(sample=sample)
 
+    def customInit(self, initVars):
+        sample = initVars['sample']
         self.applyEWK = ('DY' in sample.identifier and not '10to50' in sample.identifier) or ('WJet' in sample.identifier)
         self.applyNLO = self.applyEWK and ('amc' not in sample.identifier) 
         self.sys_sample = None

@@ -12,6 +12,7 @@ import sys
 import pickle
 import glob
 import shutil
+import math
 
 class MvaTrainingHelper(object):
 
@@ -56,8 +57,12 @@ class MvaTrainingHelper(object):
         self.globalRescale = 2.0
         
         self.trainingOutputFileName = 'mvatraining_{factoryname}_{region}.root'.format(factoryname=self.factoryname, region=mvaName)
-        self.trainingOutputFile = ROOT.TFile.Open(self.trainingOutputFileName, "RECREATE")
+        print("INFO: MvaTrainingHelper class created.")
 
+
+    def prepare(self):
+
+        self.trainingOutputFile = ROOT.TFile.Open(self.trainingOutputFileName, "RECREATE")
         # ----------------------------------------------------------------------------------------------------------------------
         # create TMVA factory
         # ----------------------------------------------------------------------------------------------------------------------
@@ -67,8 +72,6 @@ class MvaTrainingHelper(object):
         else:
             print ("\x1b[31mERROR: initialization of MvaTrainingHelper failed!\x1b[0m") 
 
-
-    def prepare(self):
         # ----------------------------------------------------------------------------------------------------------------------
         # add sig/bkg x training/eval trees
         # ----------------------------------------------------------------------------------------------------------------------
@@ -214,6 +217,76 @@ class MvaTrainingHelper(object):
         pickle.dump(info,infofile)
         infofile.close()
 
+    def getExpectedSignificance(self, tree, nBins, xMin, xMax, power=1.0, rescaleSig=1.0, rescaleBkg=1.0):
+        hSIG = ROOT.TH1D("hSig","hSig",nBins,xMin,xMax)
+        hBKG = ROOT.TH1D("hBkg","hBkg",nBins,xMin,xMax)
+        print("INFO: GetEntries() = ", tree.GetEntries())
+        if power != 1.0:
+            print("INFO: rescale BDT score with power ", power)
+        for event in tree:
+            if power != 1.0:
+                x = (getattr(event, self.mvaName)-xMin)/(xMax-xMin)
+                if x<0:
+                    x=0
+                if x>0.999999:
+                    x=0.999999
+                value = math.pow(x, power)*(xMax-xMin)+xMin
+            else:
+                value = max(min(getattr(event, self.mvaName),xMax-0.00001),xMin)
+
+            weight = event.weight
+            if event.classID == 1:
+                hSIG.Fill(value, weight * rescaleSig)
+            else:
+                hBKG.Fill(value, weight * rescaleBkg)
+        ssbSum = 0.0
+        sSum = 0
+        bSum = 0
+        sbTableFormat = "{bin: <16}{signal: <16}{background: <16}{ssb: <16}"
+        print("---- nBins =", nBins, " from ", xMin, "..", xMax, "-----")
+        print(sbTableFormat.format(bin="bin", signal="signal", background="background", ssb="S/sqrt(S+B)"))
+        for i in range(nBins):
+            ssbSum += hSIG.GetBinContent(1+i)*hSIG.GetBinContent(1+i)/(hSIG.GetBinContent(1+i) + hBKG.GetBinContent(1+i)) if (hSIG.GetBinContent(1+i) + hBKG.GetBinContent(1+i)) > 0 else 0
+            sSum += hSIG.GetBinContent(1+i)
+            bSum += hBKG.GetBinContent(1+i)
+            ssb = hSIG.GetBinContent(1+i)/math.sqrt(hSIG.GetBinContent(1+i) + hBKG.GetBinContent(1+i)) if (hSIG.GetBinContent(1+i) + hBKG.GetBinContent(1+i)) > 0 else 0
+            print(sbTableFormat.format(bin=i, signal=round(hSIG.GetBinContent(1+i),1), background=round(hBKG.GetBinContent(1+i),1), ssb=round(ssb,3)))
+        expectedSignificance = math.sqrt(ssbSum)
+        print(sbTableFormat.format(bin="SUM", signal=round(sSum,1), background=round(bSum,1), ssb="\x1b[34mZ=%1.3f\x1b[0m"%expectedSignificance))
+        print("-"*40)
+        hSIG.Delete()
+        hBKG.Delete()
+        return expectedSignificance, sSum, bSum
+
+    def estimateExpectedSignificance(self):
+        print("INFO: open ", self.trainingOutputFileName)
+        rootFile = ROOT.TFile.Open(self.trainingOutputFileName, "READ")
+        print("INFO: ->", rootFile)
+        testTree = rootFile.Get('./TestTree')
+
+        # run a few tests with different binnings and rescaling of BDT score
+        self.getExpectedSignificance(testTree, 15, -0.8, 1.0)
+        self.getExpectedSignificance(testTree, 15, -0.8, 0.9)
+        self.getExpectedSignificance(testTree, 15, -0.8, 0.8, power=0.5)
+        self.getExpectedSignificance(testTree, 15, -0.8, 0.8, power=0.33)
+        self.getExpectedSignificance(testTree, 15, -0.8, 0.8, power=1.5)
+        self.getExpectedSignificance(testTree, 15, -0.8, 0.8, power=2.0)
+
+        # close to nominal binning
+        print("---- ~nominal TEST -----")
+        esTest, sTest, bTest = self.getExpectedSignificance(testTree, 15, -0.8, 0.8)
+        print("---- ~nominal TRAINING (without correct normalization) -----")
+        trainTree = rootFile.Get('./TrainTree')
+        esTrain, sTrain, bTrain = self.getExpectedSignificance(trainTree, 15, -0.8, 0.8)
+
+        # the tree ./TrainTree contains the input events for training AFTER re-balancing the classes
+        # therefore for SIG/BKG separately the normalization is fixed to the one of the TEST events
+        rescaleSig = 1.0*sTest/sTrain
+        rescaleBkg = 1.0*bTest/bTrain
+        print("---- ~nominal TRAINING -----")
+        trainTree = rootFile.Get('./TrainTree')
+        esTrain, sTrain, bTrain = self.getExpectedSignificance(trainTree, 15, -0.8, 0.8, rescaleSig=rescaleSig, rescaleBkg=rescaleBkg)
+
 # read arguments
 argv = sys.argv
 parser = OptionParser()
@@ -223,6 +296,8 @@ parser.add_option("-C", "--config", dest="config", default=[], action="append",
                       help="configuration file")
 parser.add_option("-t","--trainingRegions", dest="trainingRegions", default='',
                       help="cut region identifier")
+parser.add_option("-s", "--expectedSignificance" ,action="store_true", dest="expectedSignificance", default=False,
+                          help="Compute estimate for expected significance (without systematics)")
 (opts, args) = parser.parse_args(argv)
 if opts.config =="":
         opts.config = ["config"]
@@ -241,6 +316,13 @@ if len(trainingRegions) > 1:
     exit(1)
 for trainingRegion in trainingRegions:
     th = MvaTrainingHelper(config=config, mvaName=trainingRegion)
-    th.prepare().run()
-    th.printInfo()
+    if opts.expectedSignificance:
+        th.estimateExpectedSignificance()
+    else:
+        th.prepare().run()
+        th.printInfo()
+        try:
+            th.estimateExpectedSignificance()
+        except:
+            pass
 

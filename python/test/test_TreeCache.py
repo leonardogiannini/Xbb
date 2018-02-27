@@ -11,7 +11,7 @@ import os
 class TestTreeCacheMethods(unittest.TestCase):
 
     def setUp(self):
-        self.scratchDirectory = os.environ['SCRATCH_DIR'] if 'SCRATCH_DIR' in os.environ else '.' 
+        self.scratchDirectory = os.environ['SCRATCH_DIR'] if 'SCRATCH_DIR' in os.environ else '.'
         self.sampleName = 'SomeSampleWhichWillBeCached'
         self.someCut = "nJet==5&&Sum$(Jet)>500"
         self.tmpDir = self.scratchDirectory + '/tmp/'

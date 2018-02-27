@@ -6,7 +6,7 @@ import sys
 
 class VtypeCorrector(object):
 
-    def __init__(self, tree, channel='all'):
+    def __init__(self, tree=None, channel='all'):
         self.channel = channel
         self.lastEntry = -1
         self.n_vtype_unchanged = 0
@@ -32,10 +32,15 @@ class VtypeCorrector(object):
             self.branchBuffers[branchName] = np.zeros(21, dtype=np.float32)
             self.branches.append({'name': branchName, 'formula': self.getBranch, 'arguments': branchName})
 
+        if tree:
+            self.setTree(tree)
+
+    def customInit(self, initVars):
+        tree = initVars['tree']
         #include the Vytpe reco here
         self.zEleSelection = lambda x : tree.selLeptons_pt[x] > 15 and tree.selLeptons_eleMVAIdSppring16GenPurp[x] >= 1
         self.zMuSelection = lambda x : tree.selLeptons_pt[x] > 15 and  tree.selLeptons_looseIdPOG[x] and tree.selLeptons_relIso04[x] < 0.25    
-    
+
     # recompute Vtype, return false to skip the event if Vtype does not match channel
     def processEvent(self, event):
         isGoodEvent = True

@@ -161,7 +161,7 @@ print 'xMin is', xMin
 print 'xMax is', xMax
 ROOToutname = config.get('dc:%s'%var,'dcName')
 RCut = config.get('dc:%s'%var,'cut')
-signals = eval(config.get('dc:%s'%var,'signal'))
+signals = eval('['+config.get('dc:%s'%var,'signal')+']')
 datas = config.get('dc:%s'%var,'dcBin')
 Datacardbin=config.get('dc:%s'%var,'dcBin')
 anType = config.get('dc:%s'%var,'type')

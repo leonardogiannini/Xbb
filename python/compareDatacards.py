@@ -104,9 +104,9 @@ class DatacardReader(object):
         histograms = ['-']
         histos = [self.getHisto(self.shapes[bins[i]]['file'], self.shapes[bins[i]]['histogram'].replace('$PROCESS', processes[i])) for i in range(1, len(bins))]
         histograms += histos
-        
+
         return {bins[i] + ':' + processes[i]: histograms[i] for i in range(len(bins))}
-    
+
     def getShapesData(self):
         binRow = self.find('bin')
         observationRow = self.find('observation', start=binRow)

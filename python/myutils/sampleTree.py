@@ -336,12 +336,26 @@ class SampleTree(object):
     def addFormula(self, formulaName, formula=None):
         if formula is None:
             formula = formulaName
+
+        # there might be an undocumented limit on the length of cutstrings in ROOT...
+        if len(formula) > 1023:
+            print("\x1b[41m\x1b[97m------------------------------------------------------------------------------")
+            print(" WARNING !!! ROOT.TTreeFormula of length %d, this might cause problems !!"%len(formula))
+            print(" reduce length of formulas if problems occur, e.g. by passing lists of cut formulas!")
+            print("------------------------------------------------------------------------------\x1b[0m")
+
         self.formulaDefinitions.append({'name': formulaName, 'formula': formula})
         self.formulas[formulaName] = ROOT.TTreeFormula(formulaName, formula, self.tree) 
         if self.formulas[formulaName].GetNdim() == 0:
             print("DEBUG: formula is:", formula)
             print("\x1b[31mERROR: adding the tree formula failed! Check branches of input tree and loaded namespaces.\x1b[0m")
             raise Exception("SampleTreeAddTTreeFormulaFailed")
+
+    # ------------------------------------------------------------------------------
+    # return list of formulas
+    # ------------------------------------------------------------------------------
+    def getFormulas(self):
+        return self.formulas
 
     # ------------------------------------------------------------------------------
     # add a new branch
@@ -818,7 +832,9 @@ class SampleTree(object):
             pass
 
         if self.totalNanoTreeCounts:
-            count = self.totalNanoTreeCounts[countHistogram if countHistogram else 'genEventCount']
+            if not countHistogram:
+                countHistogram = self.config.get('Configuration', 'countTreeName') if self.config.has_option('Configuration', 'countTreeName') else 'genEventSumw'
+            count = self.totalNanoTreeCounts[countHistogram]
         else:
             if not countHistogram:
                 try:

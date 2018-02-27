@@ -1,0 +1,94 @@
+[Configuration]
+
+#!! List of the config you want to use
+#!! The number of config has to be exaclty 7. Will include only essential configuration files for now
+#!! The list only support spaces between configs
+List = paths.ini general.ini cuts.ini training.ini datacards.ini plots.ini lhe_weights.ini samples_nosplit.ini
+treeName = Events
+
+# "PSI" or "pisa"
+whereToLaunch = lxplus-condor
+channel = Zll
+TreeCopierPSI = True
+files_per_job = 50
+nprocesses = 0
+
+user = %(USER)s
+cmsswbase = %(CMSSW_BASE)s
+run_locally = False
+use_ntuples_from_CERN = False
+
+# first one is the primary one
+xrootdRedirectors = root://eoscms.cern.ch/ 
+;xrootdRedirectorGlobal = root://t3se01.psi.ch:1094/
+;inputStoragePath = /pnfs/psi.ch/cms/trivcat/
+pnfsStoragePath = /eos/cms/user/l/legianni/pnfs/
+
+[Directories]
+Dname: logsNano17 
+;!! Working Directory
+scratch = /eos/user/l/legianni/scratch 
+Wdir: <!Configuration|cmsswbase!>/src/ 
+
+samplepath = <!Directories|plottingSamples!>
+samplefiles = <!Configuration|cmsswbase!>/src/Xbb/python/LxplusNanos2017config/files_Nano2017_V1
+
+;!! The directory with the code
+vhbbpath= <!Directories|Wdir!>/Xbb
+
+;!! specifies the .cfg files with the Samples information
+samplesinfo: <!Directories|vhbbpath!>/python/LxplusNanos2017config/samples_nosplit.ini
+
+;!! where you want to store the logfiles from job submissions
+;these lines are automatically written by the submit script!
+logpath: /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/logsNano17//bon/Logs/
+plotpath: /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/logsNano17//bon/Plots/
+limits: /afs/cern.ch/work/l/legianni/VHbb_new/CMSSW_9_4_0_pre3/src//Xbb/python/logsNano17//bon/Limits/
+
+;!! from which samples to plot and where to save the plots
+;plottingSamples: <!Directories|PREPout!>
+plottingSamples: <!Directories|PREPout!>
+;plottingSamples: <!Directories|MVAin!>
+;plottingSamples: <!Directories|MVAout!>
+
+
+;! basedir for tagged folder structure
+
+tagDir: <!Directories|vhbbpath!>/python/<!Directories|Dname!>/
+
+;#!! cached files
+tmpSamples = root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/hbb/ntuples/NanoTest/pnfs/VHbb/Nano17_crs/new
+sampleName = WW_pythia8
+
+#!! from which samples to make the DCs and where to save the DCs
+;To make di-jet mass plots
+dcSamples: root://t3dcachedb03.psi.ch:1094//pnfs/psi.ch/cms/trivcat/store/user/gaperrin/VHbb/ZllHbb13TeV_V25/sys_v8_allw_addJESsys_sysMinMax_bTagsplit_rmvbr_MVAIDsplit_v2_VV_SBWeightVV_SBWeightVH
+
+;#!! From where to take the raw samples and where to put the prepared trees:
+PREPin: .
+PREPout: root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/hbb/ntuples/NanoTest/pnfs/VHbb/Nano17_crs/prep/v1/ 
+
+
+#!! On which samples to apply the regression and write the sys and where to write the resulting trees:
+
+# 1)
+#SYSin: root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/full/prep/v1/ 
+#SYSout: root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/full/sys/v1_vtype/
+
+# 2)
+SYSin: root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/hbb/ntuples/NanoTest/pnfs/VHbb/Nano17_crs/prep/v1/ 
+SYSout: root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/hbb/ntuples/NanoTest/pnfs/VHbb/Nano17_crs/sysnew/v1/
+#SYSout: root://cmseos.fnal.gov//store/user/legianni/pnfs/VHbb/LxplusZlltest/full/sys/v1_vtype_sys_v2/
+
+#!! On which samples to evaluate the MVA on and where to write the resulting trees:
+MVAin: <!Directories|SYSout!> 
+MVAout: root://eosuser.cern.ch//eos/user/l/legianni/pnfs/VHbb/LxplusZlltest/full/eval/v1/ 
+
+#!! to fix corruption problem use scratch
+#MVAout: <!Directories|scratch!>/
+
+#!! On which samples to evaluate the MVAon and where to write the resulting trees:
+#SPLITin: <!Directories|samplepath!>/env/sys/
+#SPLITout: <!Directories|SYSout!>/split/
+
+

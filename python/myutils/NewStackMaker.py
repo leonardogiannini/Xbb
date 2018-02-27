@@ -27,7 +27,7 @@ class NewStackMaker:
         self.normalize = eval(self.config.get(self.configSection, 'Normalize'))
         self.log = eval(self.config.get(self.configSection, 'log'))
         self.AddErrors = False
-        if self.config.has_option('plotDef:%s'%var, 'log') and not self.log:
+        if self.config.has_option('plotDef:%s'%var, 'log'):
             self.log = eval(self.config.get('plotDef:%s'%var,'log'))
         self.blind = eval(self.config.get(self.configSection,'blind'))
         self.xAxis = self.config.get('plotDef:%s'%self.var,'xAxis')
@@ -355,6 +355,7 @@ class NewStackMaker:
         for histogramGroup in histogramGroups:
             histogramsInGroup = [histogram['histogram'] for histogram in self.histograms if histogram['group'] == histogramGroup]
             groupedHistograms[histogramGroup] = NewStackMaker.sumHistograms(histograms=histogramsInGroup, outputName="group_" + histogramGroup)
+            groupedHistograms[histogramGroup].SetStats(0)
 
         # MC histograms, defined in setup
         mcHistogramGroups = list(set([histogram['group'] for histogram in self.histograms if histogram['group']!=dataGroupName]))
@@ -516,4 +517,12 @@ class NewStackMaker:
                 print ("INFO: saved as \x1b[34m", outputFileName, "\x1b[0m")
             else:
                 print ("\x1b[31mERROR: could not save canvas to the file:", outputFileName, "\x1b[0m")
+        self.histoCounts = {'unweighted':{}, 'weighted': {}}
+
+        for histogram in self.histograms:
+            self.histoCounts['weighted'][histogram['name']] = histogram['histogram'].Integral()
+            self.histoCounts['unweighted'][histogram['name']] = histogram['histogram'].GetEntries()
+        keys = list(set(sorted([histogram['name'] for histogram in self.histograms])))
+        for key in keys:
+            print(key.ljust(50),("%d"%self.histoCounts['unweighted'][key]).ljust(10), ("%f"%self.histoCounts['weighted'][key]).ljust(10))
 

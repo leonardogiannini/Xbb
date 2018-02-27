@@ -1,0 +1,4 @@
+/store/user/legianni/NanoPost_vhbb/ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4/NanoTestExample/180117_165300/0000/tree_1.root
+/store/user/legianni/NanoPost_vhbb/ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4/NanoTestExample/180117_165300/0000/tree_2.root
+/store/user/legianni/NanoPost_vhbb/ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4/NanoTestExample/180117_165300/0000/tree_3.root
+/store/user/legianni/NanoPost_vhbb/ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M2T4/NanoTestExample/180117_165300/0000/tree_4.root

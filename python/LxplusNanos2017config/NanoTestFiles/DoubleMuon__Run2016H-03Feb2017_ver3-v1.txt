@@ -1,0 +1,6 @@
+/store/user/legianni/NanoPost_vhbb/DoubleMuon/NanoTestExample/180123_175025/0000/tree_1.root
+/store/user/legianni/NanoPost_vhbb/DoubleMuon/NanoTestExample/180123_175025/0000/tree_2.root
+/store/user/legianni/NanoPost_vhbb/DoubleMuon/NanoTestExample/180123_175025/0000/tree_3.root
+/store/user/legianni/NanoPost_vhbb/DoubleMuon/NanoTestExample/180123_175025/0000/tree_4.root
+/store/user/legianni/NanoPost_vhbb/DoubleMuon/NanoTestExample/180123_175025/0000/tree_5.root
+

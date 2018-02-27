@@ -211,7 +211,7 @@ class FileLocator(object):
     def getLocalFileName(self, rawFileName):
         if rawFileName:
             localFileName = self.removeRedirector(rawFileName.strip())
-            if localFileName.startswith('/store/'):
+            if localFileName.startswith('/store/') and self.pnfsStoragePath:
                 localFileName = self.pnfsStoragePath + localFileName.strip()
             return localFileName
         else:

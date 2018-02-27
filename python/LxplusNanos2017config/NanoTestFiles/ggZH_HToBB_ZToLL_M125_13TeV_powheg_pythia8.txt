@@ -1,0 +1,14 @@
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_1.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_2.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_3.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_4.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_5.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_6.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_7.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_8.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172446/0000/tree_9.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172517/0000/tree_1.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172517/0000/tree_2.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172517/0000/tree_3.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172545/0000/tree_1.root
+/store/user/legianni/NanoPost_vhbb/ggZH_HToBB_ZToLL_M125_13TeV_powheg_pythia8/NanoTestExample/180117_172545/0000/tree_2.root
