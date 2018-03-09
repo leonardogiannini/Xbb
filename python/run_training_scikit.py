@@ -13,6 +13,7 @@ import pickle
 import glob
 import shutil
 import numpy as np
+import math
 from sklearn import tree
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.tree import DecisionTreeClassifier
@@ -33,6 +34,7 @@ from sklearn.svm import SVC
 from sklearn.svm import LinearSVC
 from sklearn.ensemble import BaggingClassifier
 from sklearn.utils import resample
+from sklearn.neural_network import MLPClassifier
 from sklearn import preprocessing
 from xgboost import XGBClassifier
 import datetime
@@ -100,7 +102,7 @@ class MvaTrainingHelper(object):
                 'criterion': 'gini',
                 #'n_estimators': 3000,
                 'n_estimators': 400,
-                'learning_rate': 0.1,
+                #'learning_rate': 0.1,
                 'algorithm': 'SAMME.R',
                 #'min_samples_leaf': 100,
                 'splitter': 'best',
@@ -116,7 +118,12 @@ class MvaTrainingHelper(object):
         self.MVAsettingsEvaluated = []
         for mvaSetting in self.MVAsettings.split(':'):
              self.parameters[mvaSetting.split('=')[0].strip()] = eval(mvaSetting.split('=')[1].strip())
-             self.MVAsettingsEvaluated.append('%s'%mvaSetting.split('=')[0].strip() + '=' + '%r'%self.parameters[mvaSetting.split('=')[0].strip()])
+             try:
+                 self.MVAsettingsEvaluated.append('%s'%mvaSetting.split('=')[0].strip() + '=' + '%r'%self.parameters[mvaSetting.split('=')[0].strip()])
+             except:
+                 print("???:", mvaSetting)
+                 self.MVAsettingsEvaluated.append(mvaSetting)
+
         self.MVAsettingsEvaluated = ':'.join(self.MVAsettingsEvaluated)
 
     # load numpy arrays with training/testing data
@@ -167,6 +174,9 @@ class MvaTrainingHelper(object):
         arrayLists = {datasetName:[] for datasetName in datasetParts.iterkeys()}
         weightLists = {datasetName:[] for datasetName in datasetParts.iterkeys()}
         targetLists = {datasetName:[] for datasetName in datasetParts.iterkeys()}
+        
+        # standard weight expression
+        weightF = self.config.get('Weights','weightF')
 
         for category in categories:
             for sample in self.samples[category]:
@@ -202,20 +212,20 @@ class MvaTrainingHelper(object):
 
                         # initialize formulas for ROOT tree
                         for feature in features:
-                            sampleTree.addFormula(feature, feature)
-
+                            sampleTree.addFormula(feature)
+                        sampleTree.addFormula(weightF)
+                        
                         # fill numpy array from ROOT tree
                         for i, event in enumerate(sampleTree):
                             for j, feature in enumerate(features):
                                 inputData[i, j] = sampleTree.evaluate(feature)
+                            # total weight comes from weightF (btag, lepton sf, ...) and treeScale to scale MC to x-section
+                            totalWeight = treeScale * sampleTree.evaluate(weightF)
+                            weightLists[datasetName].append(totalWeight)
+                            targetLists[datasetName].append(categories.index(category))
 
-                        print(inputData)
                         arrayLists[datasetName].append(inputData)
 
-                        #TODO: below
-                        for i in range(nSamples):
-                            weightLists[datasetName].append(treeScale)
-                            targetLists[datasetName].append(categories.index(category))
                     else:
                         print ("\x1b[31mERROR: TREE NOT FOUND:", sample.name, " -> not cached??\x1b[0m")
                         raise Exception("CachedTreeMissing")
@@ -320,11 +330,16 @@ class MvaTrainingHelper(object):
                     colsample_bytree=self.parameters['colsample_bytree'],
                     subsample=self.parameters['subsample'],
                     min_child_weight=self.parameters['min_child_weight'],
+                    gamma=self.parameters['gamma'] if 'gamma' in self.parameters else 0.0,
                     #reg_alpha=8,
-                    #reg_lambda=1.3,
-                    )
+                    reg_lambda=self.parameters['reg_lambda'] if 'reg_lambda' in self.parameters else 1.0,
+                    reg_alpha=self.parameters['reg_alpha'] if 'reg_alpha' in self.parameters else 0.0,
+                    ) 
             if self.parameters['class_weight'] == 'balanced':
                 applyClassWeights = True
+        elif self.parameters['classifier'] == 'MLPClassifier':
+            classifierParams = {k:v for k,v in self.parameters.iteritems() if k in ['solver', 'alpha', 'hidden_layer_sizes', 'max_iter', 'warm_start', 'learning_rate_init', 'learning_rate', 'momentum', 'epsilon', 'beta_1', 'beta_2', 'validation_fraction', 'early_stopping']}
+            clf = MLPClassifier(**classifierParams) 
         elif self.parameters['classifier'] in ['SVC', 'LinearSVC']:
             '''
             clf = SVC(
@@ -385,6 +400,7 @@ class MvaTrainingHelper(object):
                         clf0,
                         max_samples=1.0 / bagged,
                         max_features=self.parameters['baggedfeatures'] if 'baggedfeatures' in self.parameters else 1.0,
+                        bootstrap_features=self.parameters['bootstrapfeatures'] if 'bootstrapfeatures' in self.parameters else False,
                         n_estimators=n_estimators,
                     )
 
@@ -409,20 +425,21 @@ class MvaTrainingHelper(object):
         # preprocessing
         print("transformation...")
 
-        if self.parameters['scaler'] == 'standard':
-            self.scaler = preprocessing.StandardScaler().fit(self.data['train']['X'])
-        elif self.parameters['scaler'] == 'minmax':
-            self.scaler = preprocessing.MinMaxScaler().fit(self.data['train']['X'])
-        elif self.parameters['scaler'] == 'robust':
-            self.scaler = preprocessing.RobustScaler().fit(self.data['train']['X'])
+        if 'scaler' in self.parameters:
+            if self.parameters['scaler'] == 'standard':
+                self.scaler = preprocessing.StandardScaler().fit(self.data['train']['X'])
+            elif self.parameters['scaler'] == 'minmax':
+                self.scaler = preprocessing.MinMaxScaler().fit(self.data['train']['X'])
+            elif self.parameters['scaler'] == 'robust':
+                self.scaler = preprocessing.RobustScaler().fit(self.data['train']['X'])
+            else:
+                self.scaler = None
         else:
             self.scaler = None
 
         if self.scaler:
             self.data['train']['X'] = self.scaler.transform(self.data['train']['X'])
             self.data['test']['X'] = self.scaler.transform(self.data['test']['X'])
-
-        #self.parameters['limit'] = 50000
 
         # SHUFFLE all samples before
         self.shuffle = False
@@ -445,9 +462,34 @@ class MvaTrainingHelper(object):
             for dataset in self.datasets:
                 self.data[dataset] = resample(self.data[dataset], n_samples=limitNumTrainingSamples, replace=False)
 
+        # oversample
+        upscale = self.parameters['upscalefactor'] if 'upscalefactor' in self.parameters else None
+        if upscale:
+            upscalemax =  self.parameters['upscalemax'] if 'upscalemax' in self.parameters else 10 
+            upscalesignal = self.parameters['upscalefactorsignal'] if 'upscalefactorsignal' in self.parameters else 1.0 #upscalefactorsignal
+            indices = []
+            for i in range(len(self.data['train']['sample_weight'])):
+                #print(x)
+                x= self.data['train']['sample_weight'][i]
+                if self.data['train']['y'][i] > 0.5:
+                    x *= upscalesignal
+                n = x * upscale
+                # limit oversampling factor!
+                if n > upscalemax:
+                    n=upscalemax
+                if n<1:
+                    n=1
+                intN = int(n)
+                indices += [i]*intN
+                #floatN = n-intN
+                #if floatN > 0:
+                #    if random.uniform(0.0,1.0) < floatN:
+                #        indices += [i]
 
-        #self.targetsTraining = self.targetsTraining*2.0-1.0
-        #self.targetsTest = self.targetsTest*2.0-1.0
+            self.data['train']['X'] = self.data['train']['X'][indices]
+            self.data['train']['y'] = self.data['train']['y'][indices]
+            self.data['train']['sample_weight'] = self.data['train']['sample_weight'][indices]
+            self.verify_data()
 
         # BALANCE weights
         # calculate total weights and class_weights
@@ -484,46 +526,45 @@ class MvaTrainingHelper(object):
         print("...")
         # TRAINING
 
+        learningCurve = []
         if self.parameters['classifier'] == 'XGBClassifier':
-            x0 = []
-            y0 = []
-            x1 = []
-            y1 = []
-            #for i in range(len(self.targetsTraining)):
-            #    if self.targetsTraining[i] < 0.5 or (random.uniform(0.0,1.0) < 0.01):
-            #        x0.append(self.inputDataTraining[i])
-            #        y0.append(self.targetsTraining[i])
-            #for i in range(len(self.targetsTest)):
-            #    if self.targetsTest[i] < 0.5 or (random.uniform(0.0,1.0) < 0.01):
-            #        x1.append(self.inputDataTest[i])
-            #        y1.append(self.targetsTest[i])
-            #x0a = np.array(x0, dtype=np.float32)
-            #x1a = np.array(x1, dtype=np.float32)
-            #y0a = np.array(y0, dtype=np.float32)
-            #y1a = np.array(y1, dtype=np.float32)
-
-            #eval_set = [(x0a,y0a),(x1a,y1a)]
-
-            #clf = clf.fit(self.inputDataTraining, self.targetsTraining, self.weightsTraining, eval_metric="auc", eval_set=eval_set, verbose=True)
-            #clf = clf.fit(self.inputDataTraining, self.targetsTraining, self.weightsTraining, verbose=True)
-
+            clf = clf.fit(self.data['train']['X'], self.data['train']['y'], self.data['train']['sample_weight'], verbose=True)
         else:
-            clf = clf.fit(**self.data['train'])
+            try:
+                clf = clf.fit(**self.data['train'])
+            except:
+                clf = clf.fit(X=self.data['train']['X'], y=self.data['train']['y'])
+                
+                if 'rounds' in self.parameters and self.parameters['rounds'] > 1:
+                    for rNumber in range(self.parameters['rounds']):
+                        results = clf.predict_proba(self.data['test']['X']) 
+                        auc1 = roc_auc_score(self.data['test']['y'], results[:,1], sample_weight=self.data['test']['sample_weight'])
+                        print(" round ", rNumber, " AUC=", auc1)
+                        learningCurve.append(auc1)
+                        clf = clf.fit(X=self.data['train']['X'], y=self.data['train']['y'])
+
         print("***** FIT done")
 
         # TEST
-        results = clf.decision_function(self.data['test']['X'])
-        print("***** EVALUATION on test sample done")
-        results_train = clf.decision_function(self.data['train']['X'])
-        print("***** EVALUATION on training sample done")
+        try:
+            results = clf.decision_function(self.data['test']['X'])
+            print("***** EVALUATION on test sample done")
+            results_train = clf.decision_function(self.data['train']['X'])
+            print("***** EVALUATION on training sample done")
 
-        print("R:", results.shape, results)
+            print("R:", results.shape, results)
 
-        results = np.c_[np.ones(results.shape[0]), results]
-        results_train = np.c_[np.ones(results_train.shape[0]), results_train]
+            results = np.c_[np.ones(results.shape[0]), results]
+            results_train = np.c_[np.ones(results_train.shape[0]), results_train]
+        except:
+            results = clf.predict_proba(self.data['test']['X'])
+            results_train = clf.predict_proba(self.data['train']['X'])
 
-        #results = clf.predict_proba(self.inputDataTest)
-        #results_train = clf.predict_proba(self.inputDataTraining)
+        # ROC curve
+        print("calculating auc...")
+        auc1 = roc_auc_score(self.data['test']['y'], results[:,1], sample_weight=self.data['test']['sample_weight'])
+        auc_training = roc_auc_score(self.data['train']['y'], results_train[:,1], sample_weight=self.data['train']['sample_weight'])
+        print("AUC:", auc1, " (training:", auc_training, ")")
 
         print("**** compute quantiles")
         qx = np.array([0.01, 0.99])
@@ -550,13 +591,24 @@ class MvaTrainingHelper(object):
 
         minProb = qy[0]
         maxProb = qy[1]
+        delta = maxProb-minProb
+        minProb -= delta * 0.01
+        maxProb += delta * 0.10
+
+        useSqrt = False
 
         # fill TRAINING SCORE histogram (class probability)
-        h1t = ROOT.TH1D("h1t","h1t",100,0.0,1.0)
-        h2t = ROOT.TH1D("h2t","h2t",100,0.0,1.0)
+        h1t = ROOT.TH1D("h1t","h1t",50,0.0,1.0)
+        h2t = ROOT.TH1D("h2t","h2t",50,0.0,1.0)
         for i in range(len(self.data['train']['X'])):
             result = (results_train[i][1]-minProb)/(maxProb-minProb)
+<<<<<<< HEAD
+            if useSqrt:
+                result = math.sqrt(result)
+            weight = self.data['train']['sample_weight'][i] 
+=======
             weight = self.data['train']['sample_weight'][i]
+>>>>>>> 3df7e0593230ea62b87aaf5ce1c88e6efb9e41a8
             if self.data['train']['y'][i] < 0.5:
                 h1t.Fill(result, weight)
             else:
@@ -564,11 +616,13 @@ class MvaTrainingHelper(object):
         print("entries:", h1t.GetEntries(), h2t.GetEntries())
 
         # fill TEST SCORE histogram (class probability)
-        h1 = ROOT.TH1D("h1","h1",100,0.0,1.0)
-        h2 = ROOT.TH1D("h2","h2",100,0.0,1.0)
+        h1 = ROOT.TH1D("h1","h1",50,0.0,1.0)
+        h2 = ROOT.TH1D("h2","h2",50,0.0,1.0)
         for i in range(len(self.data['test']['X'])):
             try:
                 result = (results[i][1]-minProb)/(maxProb-minProb)
+                if useSqrt:
+                    result = math.sqrt(result)
                 weight = self.data['test']['sample_weight'][i]
                 if self.data['test']['y'][i] < 0.5:
                     h1.Fill(result, weight)
@@ -580,11 +634,6 @@ class MvaTrainingHelper(object):
 
         timestamp = str(datetime.datetime.now()).split('.')[0].replace(' ','_').replace(':','-') + '_' + self.getHash()
 
-        # ROC curve
-        print("calculating auc...")
-        auc1 = roc_auc_score(self.data['test']['y'], results[:,1], sample_weight=self.data['test']['sample_weight'])
-        auc_training = roc_auc_score(self.data['train']['y'], results_train[:,1], sample_weight=self.data['train']['sample_weight'])
-        print("AUC:", auc1, " (training:", auc_training, ")")
         try:
             fpr, tpr, thresholds = roc_curve(self.data['test']['y'], results[:,1], sample_weight=self.data['test']['sample_weight'])
             auc2 = auc(fpr, tpr)
@@ -659,6 +708,12 @@ class MvaTrainingHelper(object):
         html.append('<b>raw-score-min</b>: ' + '%r<br>'%minProb)
         html.append('<b>raw-score-max</b>: ' + '%r<br>'%maxProb)
 
+        try:
+            for i,auc0 in enumerate(learningCurve):
+                html.append('<b>step %d -&gt;%1.4f</b><br>'%(i, auc0))
+        except:
+            pass
+
         fprStepsForEfficiencies = [0.01, 0.05, 0.1, 0.2, 0.5]
         fprStepCounter = 0
         for i in range(len(fpr)):
@@ -702,12 +757,20 @@ class MvaTrainingHelper(object):
 
         classifierOutputPath = self.getCachedNumpyArrayPath()
         classifierFileName = classifierOutputPath + '/clf' + timestamp + '.pkl'
+<<<<<<< HEAD
+        joblib.dump(clf, classifierFileName) 
+        joblib.dump(self.scaler, classifierOutputPath + '/clf' + timestamp + '_scaler.pkl') 
+
+=======
         joblib.dump(clf, classifierFileName)
+>>>>>>> 3df7e0593230ea62b87aaf5ce1c88e6efb9e41a8
         html.append('<h3>classifier dump</h3>' + classifierFileName)
 
         html.append('</body></html>')
-        with open(self.logpath + '/scikit_comp_bdt_' + timestamp + '.html', 'w') as outputfile:
+        htmlPath = self.logpath + '/scikit_comp_bdt_' + timestamp + '.html'
+        with open(htmlPath, 'w') as outputfile:
             outputfile.write('\n'.join(html))
+        print("INFO: html written to:", htmlPath)
 
         #tree.export_graphviz(clf, out_file='tree.gpv')
         #self.config.get('Directories','vhbbpath')+'/python/weights/'

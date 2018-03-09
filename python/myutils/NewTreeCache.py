@@ -65,12 +65,15 @@ class TreeCache:
             # count number of chunks the cached data is split into
             splitFilesChunkSize = sample.mergeCachingSize 
             splitFilesChunks = SampleTree({'name': sample.identifier, 'folder': inputFolder}, countOnly=True, splitFilesChunkSize=splitFilesChunkSize, config=config, verbose=self.debug).getNumberOfParts()
+            # if sample passed as object, it can be a 'subsample' and habe different name and identifier
             self.sample = sample.name
+            self.sampleIdentifier = sample.identifier
             if self.debug:
                 print ("INFO: use sample=", sample.name, " #parts = ", splitFilesChunks)
         else:
-            # sample passed as string
+            # sample identifier passed as string
             self.sample = sample
+            self.sampleIdentifier = sample
         self.name = name
 
         # CUTS
@@ -217,6 +220,7 @@ class TreeCache:
             isCached = self.isCached()
         if isCached:
             self.sampleTree = SampleTree(self.cachedFileNames, config=self.config)
+            self.sampleTree.sampleIdentifier = self.sampleIdentifier
         return self.sampleTree
 
     # delete file

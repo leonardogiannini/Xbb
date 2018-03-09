@@ -30,7 +30,6 @@ config.read(opts.config)
 
 fileList = FileList.decompress(opts.fileList) if len(opts.fileList)>0 else None
 
-pathIN = config.get('Directories','PREPin')
 pathOUT = config.get('Directories','PREPout')
 samplesinfo=config.get('Directories','samplesinfo')
 samplefiles = config.get('Directories','samplefiles')
@@ -39,7 +38,7 @@ sampleconf.read(samplesinfo)
 
 whereToLaunch = config.get('Configuration','whereToLaunch')
 
-info = ParseInfo(samplesinfo,pathIN)
+info = ParseInfo(samplesinfo, None)
 samples = [x for x in info if not x.subsample and (len(opts.sampleIdentifier) == 0 or x.identifier in opts.sampleIdentifier.split(','))]
 treeCopier = copytreePSI.CopyTreePSI(config=config)
 if opts.limit and len(samples) > int(opts.limit):

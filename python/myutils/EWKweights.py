@@ -30,6 +30,9 @@ class EWKweights(object):
             self.sys_sample = 'Wlvp'
         elif 'ZH_HToBB_ZToNuNu' in sample.identifier and not 'ggZH_HToBB_ZToNuNu' in sample.identifier:
             self.sys_sample = 'Zvv'
+        self.isData = sample.type == 'DATA'
+        if self.isData:
+            self.branches = []
 
     def getBranches(self):
         return self.branches
@@ -58,7 +61,7 @@ class EWKweights(object):
         isGoodEvent = True
         currentEntry = tree.GetReadEntry()
         # if current entry has not been processed yet
-        if currentEntry != self.lastEntry:
+        if currentEntry != self.lastEntry and not self.isData:
             self.lastEntry = currentEntry
 
             self.branchBuffers['EWKwVJets'][0] = 1.0

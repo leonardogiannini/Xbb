@@ -28,6 +28,7 @@ class TestInit(unittest.TestCase):
             t.Branch('a', a, 'a/F')
             t.Branch('b', b, 'b/F')
             t.Branch('c', c, 'c/F')
+            t.Branch('cButWithAnUnreasonablyLongBranchName', c, 'cButWithAnUnreasonablyLongBranchName/F')
             t.Branch('nJet', n, 'nJet/I')
             t.Branch('Jet', d, 'Jet[nJet]/F')
 

@@ -85,6 +85,12 @@ class BTagWeights(object):
                         self.branchBuffers[branchName] = array.array('f', [0])
                         self.branches.append({'name': branchName, 'formula': self.getBranch, 'arguments': branchName})
 
+    def customInit(self, initVars):
+        sample = initVars['sample']
+        self.isData = sample.type == 'DATA'
+        if self.isData:
+            self.branches = []
+
     def getBranches(self):
         return self.branches
 
@@ -203,7 +209,7 @@ class BTagWeights(object):
         isGoodEvent = True
         currentEntry = tree.GetReadEntry()
         # if current entry has not been processed yet
-        if currentEntry != self.lastEntry:
+        if currentEntry != self.lastEntry and not self.isData:
             self.lastEntry = currentEntry
             #self.MakeSysRefMap(tree)
 

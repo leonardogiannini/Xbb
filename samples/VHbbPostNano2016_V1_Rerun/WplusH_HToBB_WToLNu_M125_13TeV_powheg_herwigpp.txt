@@ -1,0 +1,1 @@
+/store/group/phys_higgs/hbb/ntuples/VHbbPostNano2016_V1_mcRerun/WplusH_HToBB_WToLNu_M125_13TeV_powheg_herwigpp/RunIISummer16MiniAODv2-PUMoriond17-80X-VHbbPostNano2016_V1_mcRerun/180301_122941/0000/tree_1.root

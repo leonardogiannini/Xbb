@@ -1,0 +1,2 @@
+/store/group/phys_higgs/hbb/ntuples/VHbbPostNano2016_V1_mcRerun/DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17-80X-VHbbPostNano2016_V1_mcRerun/180301_111639/0000/tree_1.root
+/store/group/phys_higgs/hbb/ntuples/VHbbPostNano2016_V1_mcRerun/DYJetsToLL_Pt-400To650_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17-80X-VHbbPostNano2016_V1_mcRerun/180301_111607/0000/tree_1.root

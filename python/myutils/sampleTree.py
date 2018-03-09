@@ -44,6 +44,7 @@ class SampleTree(object):
         self.samples = samples
         self.tree = None
         self.fileLocator = FileLocator(config=self.config)
+        self.sampleIdentifier = None
 
         # process only partial sample root file list
         self.splitFilesChunkSize = splitFilesChunkSize
@@ -281,6 +282,7 @@ class SampleTree(object):
                 sampleName = self.samples['sample'].identifier
             else:
                 sampleName = self.samples['name']
+            self.sampleIdentifier = sampleName
             sampleFolder = self.samples['folder']
             samplesMask = self.fileLocator.getLocalFileName(sampleFolder) + '/' + sampleName + '/*.root'
             redirector = self.fileLocator.getRedirector(sampleFolder)
@@ -854,6 +856,21 @@ class SampleTree(object):
                         exit(0)
             else:
                 count = self.histograms[countHistogram].GetBinContent(1)
+
+        # override event counts: config needs a section 'EventCounts' with sample identifier strings as keys and the new count as value
+        # [EventCounts]
+        # SampleIdentifier = 12345
+        try:
+            if self.sampleIdentifier and self.config.has_section('EventCounts') and self.config.has_option('EventCounts', self.sampleIdentifier):
+                countNew = self.config.get('EventCounts', self.sampleIdentifier)
+                print("\x1b[97m\x1b[41mINFO: overwrite event counts with values from config!!!\n value from file:", count, "\n value from config:", countNew," <--- will be used!\x1b[0m")
+                count = countNew
+            #else:
+            #    print("--> don't overwrite counts!", self.sampleIdentifier, self.config.has_section('EventCounts'), self.config.has_option('EventCounts', self.sampleIdentifier))
+        except Exception as e:
+            print("\x1b[31mException:",e," -> overwriting of event counts has been disabled\x1b[0m")
+
+
         lumi = float(sample.lumi)
         theScale = lumi * sample.xsec * sample.sf / float(count)
 

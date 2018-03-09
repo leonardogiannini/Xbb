@@ -7,12 +7,20 @@ import os
 # ------------------------------------------------------------------------------
 class PerSampleWeight(object):
 
-    def __init__(self, branchName, sample, affectedSampleNames, weightAffected=1.0, weightUnaffected=0.0):
-        self.weight = weightAffected if sample.name in affectedSampleNames else weightUnaffected
-        self.branches = [{'name': branchName, 'formula': self.getTheWeight}]
+    def __init__(self, branchName, sample=None, affectedSampleNames=None, weightAffected=1.0, weightUnaffected=0.0):
+        self.branchName = branchName
+        self.affectedSampleNames = affectedSampleNames
+        self.sample = sample
+        self.weightAffected = weightAffected
+        self.weightUnaffected = weightUnaffected
+
+    def customInit(self, initVars):
+        self.sample = initVars['sample']
+        self.weight = weightAffected if self.sample.name in self.affectedSampleNames else self.weightUnaffected
+        self.branches = [{'name': self.branchName, 'formula': self.getTheWeight}]
         self.debug = 'XBBDEBUG' in os.environ
         if self.debug:
-            print("DEBUG: sample {sampleName} will get the weight {branchName}={weight}".format(sampleName=sample.name, weight=self.weight, branchName=branchName))
+            print("DEBUG: sample {sampleName} will get the weight {branchName}={weight}".format(sampleName=self.sample.name, weight=self.weight, branchName=self.branchName))
 
     def getBranches(self):
         return self.branches

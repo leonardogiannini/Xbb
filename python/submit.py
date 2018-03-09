@@ -15,6 +15,12 @@ from myutils import BetterConfigParser, ParseInfo
 from myutils.copytreePSI import filelist
 from myutils.FileLocator import FileLocator
 
+try:
+    if sys.version_info[0] == 2 and sys.version_info[1] < 7:
+        print "\x1b[31mWARNING: unsupported Python version! Python 2.7+ is needed!\x1b[0m"
+except:
+    print "unable to detect python version!"
+
 parser = OptionParser()
 parser.add_option("-T", "--tag", dest="tag", default="8TeV",
                       help="Tag to run the analysis with, example '8TeV' uses config8TeV and pathConfig8TeV to run the analysis")
@@ -156,7 +162,9 @@ if not opts.ftag == '':
 
     # copy config files
     for item in configs:
-        shutil.copyfile(item, '%s/%s/%s'%(tagDir, opts.ftag, item.replace(opts.tag, '')))
+        # if relative path to other config folder, just take file name
+        destConfigFileName = item.split('/')[-1]
+        shutil.copyfile(item, '%s/%s/%s'%(tagDir, opts.ftag, destConfigFileName))
 
 if debugPrintOUts:
     print configs
@@ -251,6 +259,7 @@ submitScriptOptionsTemplate = '-V -cwd -q %(queue)s -N %(name)s -j y -pe smp %(n
 submitScriptSpecialOptions = {
         'mergesyscachingdcsplit': ' -l h_vmem=6g ',
         'singleeval': ' -l h_vmem=6g ',
+        'runtraining': ' -l h_vmem=6g ',
         'eval': ' -l h_vmem=4g ',
         'cachedc': ' -l h_vmem=6g ',
         'cacheplot': ' -l h_vmem=6g ',

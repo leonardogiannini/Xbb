@@ -162,15 +162,20 @@ if [ ! -d $logpath ]; then
     mkdir -p $logpath
 fi
 
-# The MVA list.
+# The MVA list, only compute for the eval steps!
+if [[ $string = *"eval"* ]]; then
 MVAList=$(
 python << END
 import myutils
 parser = myutils.BetterConfigParser()
-parser.read('${tag}config/training.ini')
-print parser.get('MVALists', 'List_for_submitscript')
+parser.read('${tag}config/paths.ini')
+configList = ['${tag}config/' + x for x in parser.get('Configuration', 'List').strip().split(' ')]
+config= myutils.BetterConfigParser()
+config.read(configList)
+print config.get('MVALists', 'List_for_submitscript')
 END
 )
+fi
 
 #-------------------------------------------------
 # Run Task

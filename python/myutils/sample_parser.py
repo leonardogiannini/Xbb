@@ -57,33 +57,36 @@ class ParseInfo:
         weightexpression=config.get('General','weightexpression')
 
         self._samplelist = []
-
-        #!! Store the list of input samples in __fileslist. Reads them directly from the folder defined in PREPin  
         self.__fileslist=[]
-        # print 'T3',T3,'samples_path',samples_path,'t3_path',t3_path
-        if T3:
-            ls = os.popen("ls "+t3_path)
-        else:
-            ls = os.popen("ls "+samples_path)
     
-  #print 'will start the loop over the lines.'
-  #print ls.read()
-        for line in ls.readlines():
-    #print 'loop over the lines'
-                if('.root' in line):
-                        truncated_line = line[line.rfind('/')+1:]
-                        _p = findnth(truncated_line,'.',2)
-                        self.__fileslist.append(truncated_line[_p+1:truncated_line.rfind('.')])
-      #print 'added a new line !'
+        # TODO: 08.03.2018: clean up this file !!!!!!
 
-        print '@DEBUG: ' + str(self.__fileslist)
+        if samples_path:
+            #!! Store the list of input samples in __fileslist. Reads them directly from the folder defined in PREPin  
+            # print 'T3',T3,'samples_path',samples_path,'t3_path',t3_path
+            if T3:
+                ls = os.popen("ls "+t3_path)
+            else:
+                ls = os.popen("ls "+samples_path)
+        
+      #print 'will start the loop over the lines.'
+      #print ls.read()
+            for line in ls.readlines():
+        #print 'loop over the lines'
+                    if('.root' in line):
+                            truncated_line = line[line.rfind('/')+1:]
+                            _p = findnth(truncated_line,'.',2)
+                            self.__fileslist.append(truncated_line[_p+1:truncated_line.rfind('.')])
+          #print 'added a new line !'
 
-  #Deleteme: Do a loop to check on __fileslist
-  #Start the loop
-  #for i in range(0,len(self.__fileslist)):
-    #print 'Is the ',i ,'th file None ? Answer:', (self.__fileslist[i] == None) 
+            print '@DEBUG: ' + str(self.__fileslist)
 
-  #End Deleteme
+      #Deleteme: Do a loop to check on __fileslist
+      #Start the loop
+      #for i in range(0,len(self.__fileslist)):
+        #print 'Is the ',i ,'th file None ? Answer:', (self.__fileslist[i] == None) 
+
+      #End Deleteme
 
         run_on_fileList = eval(config.get('Samples_running','run_on_fileList'))#Evaluate run_on_fileList from samples_nosplit.cfg 
 

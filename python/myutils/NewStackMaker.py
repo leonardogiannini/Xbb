@@ -208,10 +208,16 @@ class NewStackMaker:
         self.legends['ratio'].SetNColumns(2)
 
         # draw ratio plot
-        self.ratioPlot, error = getRatio(dataHistogram, mcHistogram, self.histogramOptions['minX'], self.histogramOptions['maxX'], "", self.maxRatioUncert, True)
-        ksScore = dataHistogram.KolmogorovTest(mcHistogram)
-        chiScore = dataHistogram.Chi2Test(mcHistogram, "UWCHI2/NDF")
-        print ("INFO: data/MC ratio, KS test:", ksScore, " chi2:", chiScore)
+        chiScore = -1.0
+        try:
+            self.ratioPlot, error = getRatio(dataHistogram, mcHistogram, self.histogramOptions['minX'], self.histogramOptions['maxX'], "", self.maxRatioUncert, True)
+            ksScore = dataHistogram.KolmogorovTest(mcHistogram)
+            chiScore = dataHistogram.Chi2Test(mcHistogram, "UWCHI2/NDF")
+            print ("INFO: data/MC ratio, KS test:", ksScore, " chi2:", chiScore)
+        except Exception as e:
+            print("\x1b[31mERROR: with ratio histogram!", e, "\x1b[0m")
+            print("(this is OK if no MC is plotted!)")
+
         try:
             self.ratioPlot.SetStats(0)
             self.ratioPlot.GetXaxis().SetTitle(self.xAxis)
@@ -430,6 +436,7 @@ class NewStackMaker:
                 self.plotLabels['topright1']['text'] = 'MC'
             allStack.SetStats(0)
             allStack.SetTitle('')
+        ROOT.gPad.SetLogy(0)
         allStack.Draw(drawOption)
 
         # set axis titles
@@ -466,15 +473,17 @@ class NewStackMaker:
             else:
                 ROOT.gPad.SetLogy(0)
             allStack.SetMaximum(Ymax)
-        if (not normalize and dataGroupName in groupedHistograms) and not self.is2D:
-            allStack.GetXaxis().SetLabelOffset(999)
-            allStack.GetXaxis().SetLabelSize(0)
-        else:
-            allStack.GetXaxis().SetTitle(self.xAxis)
+        if allStack:
+            if allStack.GetXaxis():
+                if (not normalize and dataGroupName in groupedHistograms) and not self.is2D:
+                    allStack.GetXaxis().SetLabelOffset(999)
+                    allStack.GetXaxis().SetLabelSize(0)
+                else:
+                    allStack.GetXaxis().SetTitle(self.xAxis)
 
-        if self.is2D:
-            if 'minZ' in self.histogramOptions and 'maxZ' in self.histogramOptions:
-                allStack.GetZaxis().SetRangeUser(self.histogramOptions['minZ'], self.histogramOptions['maxZ'])
+            if self.is2D:
+                if 'minZ' in self.histogramOptions and 'maxZ' in self.histogramOptions:
+                    allStack.GetZaxis().SetRangeUser(self.histogramOptions['minZ'], self.histogramOptions['maxZ'])
 
         # draw DATA
         if dataGroupName in groupedHistograms and not self.is2D:
