@@ -40,3 +40,9 @@ class Sample:
         print "group:", self.group
         print "treecut:", self.treecut
         print "--------------------"
+
+    def isData(self):
+        return self.type=='DATA'
+
+    def isMC(self):
+        return not self.isData()

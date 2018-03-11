@@ -224,7 +224,8 @@ class SampleTree(object):
                     print (key,"   ", value, "   here print key and value   ")
 		    if (key=='run' and len(countBranches)==1): value=1
                     if type(value) == int:
-                        typeCode = 'i'
+                        # 64 bit signed int 
+                        typeCode = 'L'
                     elif type(value) == long:
                         typeCode = 'L'
                     elif type(value) == float:
@@ -862,7 +863,7 @@ class SampleTree(object):
         # SampleIdentifier = 12345
         try:
             if self.sampleIdentifier and self.config.has_section('EventCounts') and self.config.has_option('EventCounts', self.sampleIdentifier):
-                countNew = self.config.get('EventCounts', self.sampleIdentifier)
+                countNew = eval(self.config.get('EventCounts', self.sampleIdentifier))
                 print("\x1b[97m\x1b[41mINFO: overwrite event counts with values from config!!!\n value from file:", count, "\n value from config:", countNew," <--- will be used!\x1b[0m")
                 count = countNew
             #else:

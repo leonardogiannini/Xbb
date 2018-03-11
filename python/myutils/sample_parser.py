@@ -33,10 +33,12 @@ class ParseInfo:
         "sample_path" contains the path where the samples are stored (PREPin). 
         "samples_config" is the "samples_nosplit.cfg" file. Depending of the variable "run_on_files" defined in "samples_nosplit.cfg", 
         the sample list are generated from the input folder (PREPin) or the list in "samples_nosplit.cfg" '''
-        
-        print "Start getting infos on all the samples (ParseInfo)"
-        print "==================================================\n"
-        print 'samples_config is', samples_config
+
+        self.debug = 'XBBDEBUG' in os.environ
+        if self.debug:
+            print "Start getting infos on all the samples (ParseInfo)"
+            print "==================================================\n"
+            print 'samples_config is', samples_config
         try:
             os.stat(samples_config)
         except:
@@ -52,6 +54,7 @@ class ParseInfo:
         config = BetterConfigParser()
         config.read(samples_config)
 
+        # TODO: 08.03.2018: newprefix and weightexpression needed?
         newprefix=config.get('General','newprefix')
         lumi=float(config.get('General','lumi'))
         weightexpression=config.get('General','weightexpression')
@@ -189,8 +192,9 @@ class ParseInfo:
                     newsample.sf = eval((config.get(sample, 'SF')))
                 newsample.group = config.get(sample,'sampleGroup')
                 self._samplelist.append(newsample)
-        print "Finished getting infos on all the samples (ParseInfo)"
-        print "=====================================================\n"
+        if self.debug:
+            print "Finished getting infos on all the samples (ParseInfo)"
+            print "=====================================================\n"
 
     def __iter__(self):
         for sample in self._samplelist:

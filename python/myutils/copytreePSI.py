@@ -65,6 +65,7 @@ class CopyTreePSI(object):
         input.Close()
         tmpFile = __tmpPath+'/'+outputFileName
         self.fileLocator.cp(source=tmpFile, target=outputFile)
+        print 'copy to final location:\x1b[34m', outputFile, '\x1b[0m'
         self.fileLocator.rm(tmpFile)
 
     def copySingleFileOneInput(self, inputs):
