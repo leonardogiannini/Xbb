@@ -14,7 +14,7 @@ from sampleTree import SampleTree as SampleTree
 # stacked histogram
 # ------------------------------------------------------------------------------
 class NewStackMaker:
-    def __init__(self, config, var, region, SignalRegion, setup=None, subcut=''):
+    def __init__(self, config, var, region, SignalRegion, setup=None, subcut='', title=None):
         self.debug = 'XBBDEBUG' in os.environ
         self.config = config
         self.var = var
@@ -39,6 +39,11 @@ class NewStackMaker:
             self.setup = [x.strip() for x in self.config.get('Plot_general', 'setupLog' if self.log else 'setup').split(',') if len(x.strip()) > 0]
         else:
             self.setup = setup
+        if not title:
+            if self.config.has_option('Plot_general', 'title'):
+                title = eval(self.config.get('Plot_general', 'title'))
+
+        self.plotTitle = title if title else "CMS"
 
         # TODO: make simpler
         self.rebin = 1
@@ -48,7 +53,10 @@ class NewStackMaker:
                 }
 
         # general event by event weight which is applied to all samples
-        if self.config.has_option('Weights','weightF'):
+        #  for special plots of weights itself, weightF can be defined in the plot definition
+        if self.config.has_option('plotDef:%s'%self.var,'weightF'):
+            self.histogramOptions['weight'] = self.config.get('plotDef:%s'%self.var,'weightF')
+        elif self.config.has_option('Weights','weightF'):
             self.histogramOptions['weight'] = self.config.get('Weights','weightF')
         else:
             self.histogramOptions['weight'] = None
@@ -94,7 +102,7 @@ class NewStackMaker:
         self.collectedObjects = []
         self.dataTitle = 'Data'
         self.maxRatioUncert = 0.5
-        self.lumi = self.config.get('Plot_general','lumi')
+        self.lumi = self.config.get('General','lumi')
         self.ratioError = None
         self.ratioPlot = None
         if SignalRegion:
@@ -208,16 +216,10 @@ class NewStackMaker:
         self.legends['ratio'].SetNColumns(2)
 
         # draw ratio plot
-        chiScore = -1.0
-        try:
-            self.ratioPlot, error = getRatio(dataHistogram, mcHistogram, self.histogramOptions['minX'], self.histogramOptions['maxX'], "", self.maxRatioUncert, True)
-            ksScore = dataHistogram.KolmogorovTest(mcHistogram)
-            chiScore = dataHistogram.Chi2Test(mcHistogram, "UWCHI2/NDF")
-            print ("INFO: data/MC ratio, KS test:", ksScore, " chi2:", chiScore)
-        except Exception as e:
-            print("\x1b[31mERROR: with ratio histogram!", e, "\x1b[0m")
-            print("(this is OK if no MC is plotted!)")
-
+        self.ratioPlot, error = getRatio(dataHistogram, mcHistogram, self.histogramOptions['minX'], self.histogramOptions['maxX'], "", self.maxRatioUncert, True)
+        ksScore = dataHistogram.KolmogorovTest(mcHistogram)
+        chiScore = dataHistogram.Chi2Test(mcHistogram, "UWCHI2/NDF")
+        print ("INFO: data/MC ratio, KS test:", ksScore, " chi2:", chiScore)
         try:
             self.ratioPlot.SetStats(0)
             self.ratioPlot.GetXaxis().SetTitle(self.xAxis)
@@ -296,7 +298,7 @@ class NewStackMaker:
     def drawPlotTexts(self):
         if 'oben' in self.pads and self.pads['oben']:
             self.pads['oben'].cd()
-        self.addObject(self.myText("CMS",0.17+(0.03 if self.is2D else 0),0.88,1.04))
+        self.addObject(self.myText(self.plotTitle,0.17+(0.03 if self.is2D else 0),0.88,1.04))
         print ('self.lumi is', self.lumi)
         try:
             self.addObject(self.myText("#sqrt{s} =  %s, L = %.2f fb^{-1}"%(self.anaTag, (float(self.lumi)/1000.0)), 0.17+(0.03 if self.is2D else 0), 0.83))
@@ -473,17 +475,15 @@ class NewStackMaker:
             else:
                 ROOT.gPad.SetLogy(0)
             allStack.SetMaximum(Ymax)
-        if allStack:
-            if allStack.GetXaxis():
-                if (not normalize and dataGroupName in groupedHistograms) and not self.is2D:
-                    allStack.GetXaxis().SetLabelOffset(999)
-                    allStack.GetXaxis().SetLabelSize(0)
-                else:
-                    allStack.GetXaxis().SetTitle(self.xAxis)
+        if (not normalize and dataGroupName in groupedHistograms) and not self.is2D:
+            allStack.GetXaxis().SetLabelOffset(999)
+            allStack.GetXaxis().SetLabelSize(0)
+        else:
+            allStack.GetXaxis().SetTitle(self.xAxis)
 
-            if self.is2D:
-                if 'minZ' in self.histogramOptions and 'maxZ' in self.histogramOptions:
-                    allStack.GetZaxis().SetRangeUser(self.histogramOptions['minZ'], self.histogramOptions['maxZ'])
+        if self.is2D:
+            if 'minZ' in self.histogramOptions and 'maxZ' in self.histogramOptions:
+                allStack.GetZaxis().SetRangeUser(self.histogramOptions['minZ'], self.histogramOptions['maxZ'])
 
         # draw DATA
         if dataGroupName in groupedHistograms and not self.is2D:
@@ -534,4 +534,13 @@ class NewStackMaker:
         keys = list(set(sorted([histogram['name'] for histogram in self.histograms])))
         for key in keys:
             print(key.ljust(50),("%d"%self.histoCounts['unweighted'][key]).ljust(10), ("%f"%self.histoCounts['weighted'][key]).ljust(10))
+
+        # save data histogram
+        if dataGroupName in groupedHistograms:
+            outputFileName = self.outputFileTemplate.format(outputFolder=outputFolder, prefix='DATA_'+prefix, prefixSeparator='_' if len(prefix)>0 else '', var=self.var, ext="root")
+            dataOutputFile = ROOT.TFile.Open(outputFileName, "recreate")
+            groupedHistograms[dataGroupName].SetDirectory(dataOutputFile)
+            dataOutputFile.Write()
+            dataOutputFile.Close()
+
 

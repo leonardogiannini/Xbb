@@ -28,7 +28,8 @@ class TTWeights(object):
     def getTTW(self, tree):
         TTW = 1
 
-        if self.sampleTree.evaluate("nTop") == 2:
+        if self.sampleTree.evaluate("nTop") == 2 and not 'ST_' in self.sample.identifier:
+
             sf_top1 = math.exp(0.0615 - 0.0005*self.sampleTree.evaluate("top0_pt"))
             sf_top2 = math.exp(0.0615 - 0.0005*self.sampleTree.evaluate("top1_pt"))
 

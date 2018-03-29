@@ -2,11 +2,13 @@
 import ROOT
 import numpy as np
 import array
+from pdgId import pdgId
 
 class EWKweights(object):
 
-    def __init__(self, sample=None):
+    def __init__(self, sample=None, nano=False):
         self.lastEntry = -1
+        self.nano = nano
         self.branchBuffers = {}
         self.branches = []
         self.branches.append({'name': 'NLOw', 'formula': self.getNLOw})
@@ -40,7 +42,10 @@ class EWKweights(object):
     def getNLOw(self, tree):
         NLOw = 1.0
         if self.applyNLO:
-            etabb = abs(tree.Jet_eta[tree.hJCidx[0]] - tree.Jet_eta[tree.hJCidx[1]])
+            if self.nano:
+                etabb = abs(tree.Jet_eta[tree.hJidx[0]] - tree.Jet_eta[tree.hJidx[1]])
+            else:
+                etabb = abs(tree.Jet_eta[tree.hJCidx[0]] - tree.Jet_eta[tree.hJCidx[1]])
             if etabb < 5:
                 NLOw = 1.153*(0.940679 + 0.0306119*etabb -0.0134403*etabb*etabb + 0.0132179*etabb*etabb*etabb -0.00143832*etabb*etabb*etabb*etabb)
         return NLOw
@@ -67,19 +72,42 @@ class EWKweights(object):
             self.branchBuffers['EWKwVJets'][0] = 1.0
             self.branchBuffers['EWKwVJets'][1] = 1.0
             self.branchBuffers['EWKwVJets'][2] = 1.0
-            if self.applyEWK and len(tree.GenVbosons_pt) > 0 and tree.GenVbosons_pt[0] > 100. and  tree.GenVbosons_pt[0] < 3000:
-                self.branchBuffers['EWKwVJets'][0] = -0.1808051+6.04146*(pow((tree.GenVbosons_pt[0]+759.098),-0.242556))
-                self.branchBuffers['EWKwVJets'][1] = self.branchBuffers['EWKwVJets'][0]
-                self.branchBuffers['EWKwVJets'][2] = self.branchBuffers['EWKwVJets'][0]
-            
-            if tree.nGenVbosons > 0 and self.sys_sample:
-                self.branchBuffers['EWKwSIG'][0] = self.signal_ewk(tree.GenVbosons_pt[0], self.sys_sample, 'nom')
-                self.branchBuffers['EWKwSIG'][1] = self.signal_ewk(tree.GenVbosons_pt[0], self.sys_sample, 'down')
-                self.branchBuffers['EWKwSIG'][2] = self.signal_ewk(tree.GenVbosons_pt[0], self.sys_sample, 'up')
+
+            if self.nano:
+
+                vBosonPts = []
+                for i in range(tree.nGenPart):
+                    if tree.GenPart_genPartIdxMother[i]==0 and tree.GenPart_pdgId[i] in [pdgId.Z, pdgId.Wp, pdgId.Wm] and tree.GenPart_pt[i] > 100.0 and tree.GenPart_pt[i] < 3000:
+                        vBosonPts.append(tree.GenPart_pt[i])
+                vBosonPts.sort(reverse=True)
+
+                if self.applyEWK and len(vBosonPts) > 0: 
+                    self.branchBuffers['EWKwVJets'][0] = -0.1808051+6.04146*(pow((vBosonPts[0]+759.098),-0.242556))
+                    self.branchBuffers['EWKwVJets'][1] = self.branchBuffers['EWKwVJets'][0]
+                    self.branchBuffers['EWKwVJets'][2] = self.branchBuffers['EWKwVJets'][0]
+                
+                if len(vBosonPts) > 0 and self.sys_sample:
+                    self.branchBuffers['EWKwSIG'][0] = self.signal_ewk(vBosonPts[0], self.sys_sample, 'nom')
+                    self.branchBuffers['EWKwSIG'][1] = self.signal_ewk(vBosonPts[0], self.sys_sample, 'down')
+                    self.branchBuffers['EWKwSIG'][2] = self.signal_ewk(vBosonPts[0], self.sys_sample, 'up')
+                else:
+                    self.branchBuffers['EWKwSIG'][0] = 1.0
+                    self.branchBuffers['EWKwSIG'][1] = 1.0
+                    self.branchBuffers['EWKwSIG'][2] = 1.0
             else:
-                self.branchBuffers['EWKwSIG'][0] = 1.0
-                self.branchBuffers['EWKwSIG'][1] = 1.0
-                self.branchBuffers['EWKwSIG'][2] = 1.0
+                if self.applyEWK and len(tree.GenVbosons_pt) > 0 and tree.GenVbosons_pt[0] > 100. and  tree.GenVbosons_pt[0] < 3000:
+                    self.branchBuffers['EWKwVJets'][0] = -0.1808051+6.04146*(pow((tree.GenVbosons_pt[0]+759.098),-0.242556))
+                    self.branchBuffers['EWKwVJets'][1] = self.branchBuffers['EWKwVJets'][0]
+                    self.branchBuffers['EWKwVJets'][2] = self.branchBuffers['EWKwVJets'][0]
+                
+                if tree.nGenVbosons > 0 and self.sys_sample:
+                    self.branchBuffers['EWKwSIG'][0] = self.signal_ewk(tree.GenVbosons_pt[0], self.sys_sample, 'nom')
+                    self.branchBuffers['EWKwSIG'][1] = self.signal_ewk(tree.GenVbosons_pt[0], self.sys_sample, 'down')
+                    self.branchBuffers['EWKwSIG'][2] = self.signal_ewk(tree.GenVbosons_pt[0], self.sys_sample, 'up')
+                else:
+                    self.branchBuffers['EWKwSIG'][0] = 1.0
+                    self.branchBuffers['EWKwSIG'][1] = 1.0
+                    self.branchBuffers['EWKwSIG'][2] = 1.0
 
             self.branchBuffers['EWKw'][0] = self.branchBuffers['EWKwSIG'][0] * self.branchBuffers['EWKwVJets'][0]    
             self.branchBuffers['EWKw'][1] = self.branchBuffers['EWKwSIG'][1] * self.branchBuffers['EWKwVJets'][1]    

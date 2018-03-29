@@ -60,11 +60,11 @@ if len(matchingSamples) != 1:
 sample = matchingSamples[0]
 
 # TODO: 
-print 'collections to add:', opts.addCollections
-collections = [x.strip() for x in opts.addCollections.split(',') if len(x.strip()) > 0]
+collections = [x.strip() for x in opts.addCollections.split(',') if len(x.strip()) > 0] if len(opts.addCollections.strip())>0  else []
 if len(collections) < 1:
-    print "no collection selected, adding 'vtype'..."
-    collections.append('vtype')
+    print "\x1b[31mWARNING: no collections added! Specify the collections to add with the --addCollections option!\x1b[0m"
+print 'collections to add:', collections
+
 
 for fileName in filelist:
     localFileName = fileLocator.getFilenameAfterPrep(fileName)

@@ -153,7 +153,8 @@ class SampleTree(object):
                                     self.histograms[histogramName].SetDirectory(0)
                                 else:
                                     if self.debug:
-                                        print("DEBUG: omitting object ", obj, " since it is neither TH1 or TTree!")
+                                        print("DEBUG: omitting object ", obj, type(obj), " since it is neither TH1 or TTree!")
+
                         input.Close()
 
                         # add file to chain
@@ -207,13 +208,14 @@ class SampleTree(object):
 		print (countBranches)
                 depth = None
                 for key,values in self.nanoTreeCounts.iteritems():
-                    if type(values[0]) in [int, float, long]:
+                    if values and len(values)>1 and type(values[0]) in [int, float, long]:
                         depth = len(values)
                         break
                 print("-"*160)
                 print("tree".ljust(25), ''.join([countBranch.ljust(25) for countBranch in countBranches]))
-                for treeNum in range(depth):
-                    print(("%d"%(treeNum+1)).ljust(25),''.join([('%r'%self.nanoTreeCounts[countBranch][treeNum]).ljust(25) for countBranch in countBranches]))
+                if depth:
+                    for treeNum in range(depth):
+                        print(("%d"%(treeNum+1)).ljust(25),''.join([('%r'%self.nanoTreeCounts[countBranch][treeNum]).ljust(25) for countBranch in countBranches]))
                 print("\x1b[34m","sum".ljust(24), ''.join([('%r'%self.totalNanoTreeCounts[countBranch]).ljust(25) for countBranch in countBranches]),"\x1b[0m")
                 print("-"*160)
 
@@ -835,9 +837,13 @@ class SampleTree(object):
             pass
 
         if self.totalNanoTreeCounts:
-            if not countHistogram:
-                countHistogram = self.config.get('Configuration', 'countTreeName') if self.config.has_option('Configuration', 'countTreeName') else 'genEventSumw'
-            count = self.totalNanoTreeCounts[countHistogram]
+            if self.config.has_option('Configuration', 'countsFromAutoPU') and eval(self.config.get('Configuration', 'countsFromAutoPU')):
+                count = self.histograms['autoPU'].GetEntries()
+                countHistogram = "autoPU.GetEntries()"
+            else:
+                if not countHistogram:
+                    countHistogram = self.config.get('Configuration', 'countTreeName') if self.config.has_option('Configuration', 'countTreeName') else 'genEventSumw'
+                count = self.totalNanoTreeCounts[countHistogram]
         else:
             if not countHistogram:
                 try:

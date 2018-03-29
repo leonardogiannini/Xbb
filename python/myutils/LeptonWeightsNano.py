@@ -30,6 +30,11 @@ class LeptonWeights(object):
 
     def customInit(self, initVars):
         self.config = initVars['config']
+        self.sample = initVars['sample']
+
+        # don't compute SF for DATA
+        if self.sample.isData():
+            self.branches = []
 
     def getBranches(self):
         return self.branches

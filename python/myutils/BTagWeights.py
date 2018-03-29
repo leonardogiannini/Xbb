@@ -13,7 +13,8 @@ class Jet :
 
 class BTagWeights(object):
 
-    def __init__(self):
+    def __init__(self, nano=False):
+        self.nano = nano
         self.lastEntry = -1
         self.branchBuffers = {}
         self.branches = []
@@ -216,15 +217,17 @@ class BTagWeights(object):
             jets_csv = []
             jets_cmva = []
 
-            for i in range(tree.nJet):
-		try:
-                 if (tree.Jet_pt_reg[i] > 20 and abs(tree.Jet_eta[i]) < 2.4):
-                    jet_cmva = Jet(tree.Jet_pt_reg[i], tree.Jet_eta[i], tree.Jet_hadronFlavour[i], tree.Jet_btagCMVAV2[i])
-                    jets_cmva.append(jet_cmva)
-		except:
-		 if (tree.Jet_bReg[i] > 20 and abs(tree.Jet_eta[i]) < 2.4):
-                    jet_cmva = Jet(tree.Jet_bReg[i], tree.Jet_eta[i], tree.Jet_hadronFlavour[i], tree.Jet_btagCMVA[i])
-                    jets_cmva.append(jet_cmva)
+            if self.nano:
+                for i in range(tree.nJet):
+                    if (tree.Jet_bReg[i]*tree.Jet_Pt[i]/tree.Jet_pt[i] > 20 and abs(tree.Jet_eta[i]) < 2.4):
+                        jet_cmva = Jet(tree.Jet_bReg[i]*tree.Jet_Pt[i]/tree.Jet_pt[i], tree.Jet_eta[i], tree.Jet_hadronFlavour[i], tree.Jet_btagCMVA[i])
+                        jets_cmva.append(jet_cmva)
+            else:
+                for i in range(tree.nJet):
+                    if (tree.Jet_pt_reg[i] > 20 and abs(tree.Jet_eta[i]) < 2.4):
+                        jet_cmva = Jet(tree.Jet_pt_reg[i], tree.Jet_eta[i], tree.Jet_hadronFlavour[i], tree.Jet_btagCMVAV2[i])
+                        jets_cmva.append(jet_cmva)
+
 
             ptmin = 20.
             ptmax = 1000.
