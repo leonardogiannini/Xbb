@@ -61,9 +61,17 @@ class vLeptonSelector(object):
                 Vtype = -1
         self.Vtype = Vtype
         self.vLeptons = vLeptons
+        self.zMuons = zMuons
+        self.zElectrons = zElectrons
 
     def getVleptons(self):
         return self.vLeptons
     
     def getVtype(self):
         return self.Vtype
+    
+    def getZelectrons(self):
+        return self.zElectrons
+
+    def getZmuons(self):
+        return self.zMuons

@@ -64,6 +64,20 @@ class NewHistoMaker:
                 weightF = "(({weight})*({specialweight}))".format(weight=weightF, specialweight=specialweight)
                 print ("INFO: use specialweight: {specialweight}".format(specialweight=specialweight))
 
+            # additional blinding cut applied to DATA only in BDT plots
+            if 'BDT' in self.histogramOptions['treeVar'] and self.sample.type == 'DATA':
+                if self.config.has_section('Blinding') and self.config.has_option('Blinding', 'BlindBDTinSR'):
+                    self.blindingCut = self.config.get('Blinding', 'BlindBDTinSR')
+                    cut = '(({cut1})&&({cut2}))'.format(cut1=cut, cut2=self.blindingCut)
+                    print ("\x1b[31mUSE BLINDING CUT FOR DATA in BDT!!", self.blindingCut ,"\x1b[0m")
+
+
+            if 'mass' in self.histogramOptions['treeVar'] and self.sample.type == 'DATA':
+                if self.config.has_section('Blinding') and self.config.has_option('Blinding', 'BlindDataInMassPlots') and eval(self.config.get('Blinding', 'BlindDataInMassPlots')):
+                    self.blindingCut = '0'
+                    cut = '(({cut1})&&({cut2}))'.format(cut1=cut, cut2=self.blindingCut)
+                    print ("\x1b[31mUSE BLINDING CUT FOR DATA in BDT!!", self.blindingCut ,"\x1b[0m")
+
             # add tree cut 
             # TODO: add sample cut again, which should not matter but to be safe
             selection = "({weight})*({cut})".format(weight=weightF, cut=cut) 

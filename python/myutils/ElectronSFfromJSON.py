@@ -1,6 +1,8 @@
 import json
 import os
 import array
+from JsonTable import JsonTable
+from vLeptons import vLeptonSelector
 
 class ElectronSFfromJSON(object):
     
@@ -8,20 +10,18 @@ class ElectronSFfromJSON(object):
         self.jsonFiles = jsonFiles
         self.debug = 'XBBDEBUG' in os.environ
 
-        self.data = {}
-        for jsonFileName in self.jsonFiles:
-            with open(jsonFileName, 'r') as jsonFile:
-                self.data.update(json.load(jsonFile))
-
+        # load JOSN files
+        self.jsonTable = JsonTable(jsonFiles)
         self.idIsoSfName = 'doubleEleIDISO2017'
         self.triggerLegNames = ['doubleEleTriggerLeg1', 'doubleEleTriggerLeg2']
-
-        self.idIsoSf = self.getEtaPtTable(self.idIsoSfName)
-        self.triggerSf = [self.getEtaPtTable(x) for x in self.triggerLegNames]
+        self.idIsoSf = self.jsonTable.getEtaPtTable(self.idIsoSfName)
+        self.triggerSf = [self.jsonTable.getEtaPtTable(x) for x in self.triggerLegNames]
 
     def customInit(self, initVars):
         sample = initVars['sample']
         self.isData = sample.type == 'DATA'
+
+        # prepare buffers for new branches to add
         self.branches = []
         self.branchBuffers = {}
         self.lastEntry = -1
@@ -45,10 +45,12 @@ class ElectronSFfromJSON(object):
         if currentEntry != self.lastEntry and not self.isData:
             self.lastEntry = currentEntry
 
-            # require two electrons      
-            if tree.nElectron >= 2:
-                sfIdIso = self.getIdIsoSf(tree.Electron_eta[0], tree.Electron_pt[0]) * self.getIdIsoSf(tree.Electron_eta[1], tree.Electron_pt[1]) 
-                sfTrigger = self.getTriggerSf(tree.Electron_eta[0], tree.Electron_pt[0], tree.Electron_eta[1], tree.Electron_pt[1])
+            zElectrons = vLeptonSelector(tree).getZelectrons()
+
+            # require two electrons
+            if len(zElectrons) == 2: 
+                sfIdIso = self.getIdIsoSf(eta=zElectrons[0].eta, pt=zElectrons[0].pt) * self.getIdIsoSf(eta=zElectrons[1].eta, pt=zElectrons[1].pt)
+                sfTrigger = self.getTriggerSf(eta1=zElectrons[0].eta, pt1=zElectrons[0].pt, eta2=zElectrons[1].eta, pt2=zElectrons[1].pt)
                 self.branchBuffers['electronSF'][0] = sfIdIso * sfTrigger
                 self.branchBuffers['electronSF_IdIso'][0] = sfIdIso
                 self.branchBuffers['electronSF_trigger'][0] = sfTrigger
@@ -58,40 +60,15 @@ class ElectronSFfromJSON(object):
                 self.branchBuffers['electronSF_trigger'][0] = 1.0
         return True
 
-
-    def getEtaPtTable(self, tableName):
-        table = []
-        if tableName in self.data:
-            for etaKey in self.data[tableName]['eta_pt_ratio'].keys():
-                etaName = etaKey.split(':')[0]
-                if etaName != "eta":
-                    raise Exception("JsonFileError")
-                etaRange = eval(etaKey.split(':')[1])
-                for ptKey in self.data[tableName]['eta_pt_ratio'][etaKey].keys():
-                    ptName = ptKey.split(':')[0]
-                    if ptName != "pt":
-                        raise Exception("JsonFileError")
-                    ptRange = eval(ptKey.split(':')[1])
-                    table.append({'eta_min': etaRange[0], 'eta_max': etaRange[1], 'pt_min': ptRange[0], 'pt_max': ptRange[1], 'value': self.data[tableName]['eta_pt_ratio'][etaKey][ptKey]['value']})
-        return table
-
-    def find(self, table, eta, pt, default=1.0):
-        for sfBin in table:
-            if sfBin['eta_min'] <= eta and eta < sfBin['eta_max'] and sfBin['pt_min'] <= pt and pt < sfBin['pt_max']:
-                return sfBin['value']
-        if self.debug:
-            print "not found in table: eta:", eta, "pt:", pt, "->returning default =", default
-        return default
-
     def getIdIsoSf(self, eta, pt):
-        sf = self.find(self.idIsoSf, eta, pt)
+        sf = self.jsonTable.find(self.idIsoSf, eta, pt)
         if self.debug:
             print "id/iso eta:", eta, "pt:", pt, "->", sf
         return sf
     
     def getTriggerSf(self, eta1, pt1, eta2, pt2):
-        leg1 = self.find(self.triggerSf[0], eta1, pt1)
-        leg2 = self.find(self.triggerSf[1], eta2, pt2)
+        leg1 = self.jsonTable.find(self.triggerSf[0], eta1, pt1)
+        leg2 = self.jsonTable.find(self.triggerSf[1], eta2, pt2)
         if self.debug:
             print "leg1: eta:", eta1, " pt:", pt1, "->", leg1
             print "leg2: eta:", eta2, " pt:", pt2, "->", leg2

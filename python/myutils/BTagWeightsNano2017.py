@@ -173,12 +173,12 @@ class BTagWeights(object):
         for jet in jets:
             #print 'ptmin', ptmin, 'ptmax', ptmax, 'etamin', etamin, 'etamax', etamax
             if (jet.pt > ptmin and jet.pt < ptmax and abs(jet.eta) > etamin and abs(jet.eta) < etamax):
-                print syst, '!', self.get_SF(pt=jet.pt, eta=jet.eta, fl=jet.hadronFlavour, val=jet.csv, syst=syst, algo=algo, wp="", shape_corr=True), jet.pt, 'jet: pt', jet.pt, 'eta', jet.eta, 'fl', jet.hadronFlavour
+                #print syst, '!', self.get_SF(pt=jet.pt, eta=jet.eta, fl=jet.hadronFlavour, val=jet.csv, syst=syst, algo=algo, wp="", shape_corr=True), jet.pt, 'jet: pt', jet.pt, 'eta', jet.eta, 'fl', jet.hadronFlavour
                 weight *= self.get_SF(pt=jet.pt, eta=jet.eta, fl=jet.hadronFlavour, val=jet.csv, syst=syst, algo=algo, wp="", shape_corr=True)
             else:
-                print 'central !',self.get_SF(pt=jet.pt, eta=jet.eta, fl=jet.hadronFlavour, val=jet.csv, syst="central", algo=algo, wp="", shape_corr=True), jet.pt
+                #print 'central !',self.get_SF(pt=jet.pt, eta=jet.eta, fl=jet.hadronFlavour, val=jet.csv, syst="central", algo=algo, wp="", shape_corr=True), jet.pt
                 weight *= self.get_SF(pt=jet.pt, eta=jet.eta, fl=jet.hadronFlavour, val=jet.csv, syst="central", algo=algo, wp="", shape_corr=True)
-        print '--->',weight
+        #print '--->',weight
         return weight
     
     # compute all the btag weights

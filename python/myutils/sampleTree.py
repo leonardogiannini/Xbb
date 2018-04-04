@@ -33,17 +33,20 @@ import gc
 # ------------------------------------------------------------------------------
 class SampleTree(object):
 
-    def __init__(self, samples, treeName=None, limitFiles=-1, splitFilesChunkSize=-1, chunkNumber=1, countOnly=False, verbose=True, config=None, saveMemory=False):
+    def __init__(self, samples, treeName=None, limitFiles=-1, splitFilesChunkSize=-1, chunkNumber=1, countOnly=False, verbose=True, config=None, saveMemory=False, xrootdRedirector=None):
         self.verbose = verbose
         self.debug = 'XBBDEBUG' in os.environ
         self.debugProfiling = 'XBBPROFILING' in os.environ
         self.config = config
         self.saveMemory = saveMemory
+        self.outputTreeBasketSize = None
+        if self.config and self.config.has_option('Configuration', 'outputTreeBasketSize'):
+            self.outputTreeBasketSize = eval(self.config.get('Configuration', 'outputTreeBasketSize'))
         self.monitorPerformance = True
         self.disableBranchesInOutput = True
         self.samples = samples
         self.tree = None
-        self.fileLocator = FileLocator(config=self.config)
+        self.fileLocator = FileLocator(config=self.config, xrootdRedirector=xrootdRedirector)
         self.sampleIdentifier = None
 
         # process only partial sample root file list
@@ -365,7 +368,7 @@ class SampleTree(object):
     # ------------------------------------------------------------------------------
     # add a new branch
     # ------------------------------------------------------------------------------
-    def addOutputBranch(self, branchName, formula, branchType='f', length=1, arguments=None, leaflist=None):
+    def addOutputBranch(self, branchName, formula, branchType='f', length=1, arguments=None, leaflist=None, arrayStyle=False):
         # this is needed to overwrite the branch if it already exists!
         self.addBranchToBlacklist(branchName)
 
@@ -381,6 +384,8 @@ class SampleTree(object):
             newBranch = {'name': branchName, 'formula': formulaName, 'type': branchType, 'length': length}
         if leaflist:
             newBranch['leaflist'] = leaflist
+        if arrayStyle:
+            newBranch['arrayStyle'] = True
         self.newBranches.append(newBranch)
 
     # ------------------------------------------------------------------------------
@@ -396,6 +401,7 @@ class SampleTree(object):
                 length=branchDict['length'] if 'length' in branchDict else 1,
                 arguments=branchDict['arguments'] if 'arguments' in branchDict else None,
                 leaflist=branchDict['leaflist'] if 'leaflist' in branchDict else None,
+                arrayStyle=branchDict['arrayStyle'] if 'arrayStyle' in branchDict else False,
             )
 
     # ------------------------------------------------------------------------------
@@ -583,12 +589,12 @@ class SampleTree(object):
         if self.debug:
             rsrc = resource.RLIMIT_DATA
             # restrict memory
-            #resource.setrlimit(rsrc, (2.0*1024*1024*1024, 6*1024*1024*1024))
+            # resource.setrlimit(rsrc, (2.0*1024*1024*1024, 6*1024*1024*1024))
             soft, hard = resource.getrlimit(rsrc)
             print('DEBUG: mem limits soft/hard:', soft, hard)
             rsrc = resource.RLIMIT_AS
             # restrict memory
-            #resource.setrlimit(rsrc, (2.0*1024*1024*1024, 6*1024*1024*1024))
+            # resource.setrlimit(rsrc, (2.0*1024*1024*1024, 6*1024*1024*1024))
             soft, hard = resource.getrlimit(rsrc)
             print('DEBUG: AS limits soft/hard:', soft, hard)
             rsrc = resource.RLIMIT_STACK
@@ -616,10 +622,9 @@ class SampleTree(object):
             for formula in self.formulaDefinitions:
                 listOfBranchesToKeep += BranchList(formula['formula']).getListOfBranches()
 
-        # ALWAYS keep the branches stated in config
+        # keep the branches stated in config, (unless they will be recomputed)
         if self.config:
             listOfBranchesToKeep += eval(self.config.get('Branches', 'keep_branches'))
-
         listOfBranchesToKeep = list(set(listOfBranchesToKeep))
 
         # disable the branches in the input if there is no output tree which wants to have all branches
@@ -649,8 +654,9 @@ class SampleTree(object):
             # clone tree structure, but don't copy any entries
             outputTree['file'].cd()
             outputTree['tree'] = self.tree.CloneTree(0)
-            #outputTree['tree'].SetAutoFlush(0)
-            #self.tree.CopyAddresses(outputTree['tree'])
+            # can be used to reduce memory consumption
+            if self.outputTreeBasketSize:
+                outputTree['tree'].SetBasketSize("*", self.outputTreeBasketSize)
             if not outputTree['tree']:
                 print ("\x1b[31mWARNING: output tree broken. try to recover!\x1b[0m")
                 # if input tree has 0 entries, don't copy 0 entries to the output tree, but ALL of them instead! (sic!)
@@ -720,7 +726,7 @@ class SampleTree(object):
             # fill branches
             for branch in self.newBranches:
                 # evaluate result either as function applied on the tree entry or as TTreeFormula
-                if branch['length'] == 1:
+                if branch['length'] == 1 and not 'arrayStyle' in branch:
                     if 'function' in branch:
                         if 'arguments' in branch:
                             branchResult = branch['function'](event, arguments=branch['arguments'])
@@ -786,6 +792,7 @@ class SampleTree(object):
             outputTree['file'].Write()
             outputTree['file'].Close()
         print('INFO: files written')
+        print('INFO: saveMemory is ', self.saveMemory)
         sys.stdout.flush()
 
         if self.saveMemory:

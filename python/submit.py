@@ -27,6 +27,7 @@ parser.add_option("-T", "--tag", dest="tag", default="8TeV",
 parser.add_option("-J", "--task", dest="task", default="",
                       help="Task to be done, i.e. 'dc' for Datacards, 'prep' for preparation of Trees, 'plot' to produce plots or 'eval' to write the MVA output or 'sys' to write regression and systematics (or 'syseval' for both). ")
 parser.add_option("-S","--samples",dest="samples",default="", help="samples you want to run on")
+parser.add_option("-s","--folders",dest="folders",default="", help="folders to check, e.g. PREPout,SYSin")
 parser.add_option("-F", "--folderTag", dest="ftag", default="",
                       help="Creats a new folder structure for outputs or uses an existing one with the given name")
 parser.add_option("-N", "--number-of-events-or-files", dest="nevents_split_nfiles_single", default=-1,
@@ -1122,6 +1123,42 @@ if opts.task == 'summary':
         print config.get('Weights', 'weightF')
     except:
         print "\x1b[31mERROR: 'weightF' missing in section 'Weights'!\x1b[0m"
+
+if opts.task == 'status':
+    fileLocator = FileLocator(config=config)
+    path = config.get("Directories", "SYSin")
+    samplefiles = config.get('Directories','samplefiles')
+    info = ParseInfo(samplesinfo, path)
+    sampleIdentifiers = info.getSampleIdentifiers() 
+    if samplesList and len([x for x in samplesList if x]) > 0:
+        sampleIdentifiers = [x for x in sampleIdentifiers if x in samplesList]
+    
+    foldersToCheck = ["SYSout"] if len(opts.folders.strip()) < 1 else opts.folders.split(',')
+    basePaths = {x: config.get("Directories", x) for x in foldersToCheck}
+
+    # process all sample identifiers (correspond to folders with ROOT files)
+    fileStatus = {}
+    for x in foldersToCheck:
+        fileStatus[x] = {}
+    for sampleIdentifier in sampleIdentifiers:
+        for x in foldersToCheck:
+            fileStatus[x][sampleIdentifier] = []
+        sampleFileList = filelist(samplefiles, sampleIdentifier)
+        for sampleFileName in sampleFileList:
+            localFileName = fileLocator.getFilenameAfterPrep(sampleFileName)
+            for folder in foldersToCheck:
+                localFilePath = "{base}/{sample}/{file}".format(base=basePaths[folder], sample=sampleIdentifier, file=localFileName)
+                fileStatus[folder][sampleIdentifier].append(fileLocator.exists(localFilePath))
+    for folder, folderStatus in fileStatus.iteritems():
+        print "---",folder,"---"
+        for sampleIdentifier, sampleStatus in folderStatus.iteritems():
+            sampleShort = (sampleIdentifier if len(sampleIdentifier)<30 else sampleIdentifier[:30]).ljust(31)
+            statusBar = ""
+            for x in sampleStatus:
+                statusBar = statusBar + ('\x1b[42m+\x1b[0m' if x else '\x1b[41mX\x1b[0m')
+            print sampleShort, ("%03d/%03d"%(len([x for x in sampleStatus if x]),len(sampleStatus))).ljust(8), statusBar
+            
+
 
 # submit all jobs, which have been grouped in a batch
 if 'condor' in whereToLaunch:
