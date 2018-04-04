@@ -74,7 +74,8 @@ class CopyTreePSI(object):
     def getRedirector(self):
         # default redirector
         redirector = 'root://xrootd-cms.infn.it/'
-        try:
+        redirector = 'root://eoscms.cern.ch//eos/cms/'
+	try:
             if 'XBBXRD' in os.environ:
                 redirector = os.environ['XBBXRD']
             elif self.config.has_option('Configuration', 'xrootdRedirectorGlobal'):
